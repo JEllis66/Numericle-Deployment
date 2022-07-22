@@ -1,0 +1,152 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.icons {
+  height: 36px;
+}
+
+.icons:hover {
+  cursor: pointer;
+}
+
+#icon2{
+  transform: translateX(10px);
+}
+
+#icon3{
+  transform: translateX(-15px);
+}
+
+#icon4{
+  transform: translateX(-5px);
+}
+
+.key_unselected, .key_selected{
+  /* width: 60px; */
+  border: white 2px solid;
+  height: 70px; 
+  background-color: rgb(224, 224, 224);
+  text-align: center;
+  padding-top: 18px;
+  border-radius: 1em;
+  font-size: 20px;
+}
+
+.key_unselected:hover, .key_selected:hover{
+  background-color: rgb(194, 194, 194);
+  cursor: pointer;
+  /* box-shadow: #282c34 1px 1px 1px; */
+}
+
+.key_pressed{
+  /* width: 60px; */
+  height: 70px;
+  background-color: rgb(164, 164, 164);
+  border: white 2px solid;
+  margin-right: 10px;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 18px;
+  border-radius: 1em;
+  box-shadow: rgb(224, 224, 224) 1px 1px 1px;
+}
+
+#logoTop{
+  height: 38px;
+  transform: translateX(5px);
+  transform: translatey(-3px);
+}
+
+.numericleColor{
+  color: #2B01FD;
+}
+
+#todaysSolution{
+  font-size: 24pt;
+}
+
+.key_enterDelete{
+  /* width: 138px; */
+  font-size: 22px;
+  height: 70px; 
+  padding-top: 17px;
+  border: white 2px solid;
+  color: white;
+  background-color: rgb(86, 86, 86);
+  border-radius: 1em;
+}
+
+.key_enterDelete:hover{
+  background-color: rgb(32,32,32);
+  cursor: pointer;
+  /* box-shadow: rgb(193, 193, 193) 2px 2px 2px; */
+}
+
+.guessGrid,.guessGridAns, .equals, .solutionGridAns, .correctDig, .nearDig, .wrongDig{
+  width: 6vw;
+  min-width: 5vw;
+  height: 60px;
+  margin-right: 6px;
+  text-align: center;
+  font-size: 20pt;
+  padding-top: 7px;
+}
+
+.guessGrid,.guessGridAns,.solutionGridAns, .correctDig, .nearDig, .wrongDig{
+  border: lightgray 2px solid;
+}
+
+.closePopUp{
+  width: 30px;
+  height: 30px;
+  border-radius: 50em;
+  background-color: rgb(236, 99, 99);
+  border: none;
+  color: white;
+}
+
+li,ul{
+  font-size: 16pt;
+  list-style-type: none;
+}
+
+
+#keyboardBar{
+  all: unset !important;
+}
+
+.correctDig{
+  background-color: #198754;
+  color: white;
+} 
+
+.nearDig{
+  background-color: #ffc107;
+} 
+
+.wrongDig {
+  background-color: #dc3545;
+  color: white;
+}
+

@@ -1,0 +1,29 @@
+
+.popup{
+    position: fixed;
+    width: 0%;
+    height: 0%;
+    z-index: 3;
+    top: 150px;
+}
+
+.popup-inner {
+    width: 600px;
+    height: 350px;
+    position: absolute;
+    padding: 30px;
+    left: 18%;
+    z-index: 10;
+    background-color: white;
+    border-radius: 1em;
+    box-shadow: rgba(0,0,0,0.8) 30px 30px 300px;
+}
+
+.popup-inner .close-btn{
+    position: fixed;
+    top: 5%;
+    right: 5%;
+}
+
+
+
