@@ -179,7 +179,7 @@ const EquationGeneration = (props) =>{
         
     }
 
-    let isTriggerd = true;
+    let isTriggerd = false;
 
     const startTrigger = () =>{
         setTimeout(function() {
@@ -194,7 +194,7 @@ const EquationGeneration = (props) =>{
     }
     
 
-    const timer = 15000000;
+    const timer = 86400000;
 
     useEffect(() => {
         const interval = setInterval(() => {
