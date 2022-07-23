@@ -146,7 +146,7 @@ const Navigation = () =>{
                 <img className="icons mt-3" id="icon1" src={menu1} alt="menu.png" onClick={()=> {setStatsPopup(false); setHelpPopup(false); setSettingsPopup(false); setUserLoginPopup(false); setNewLoginPopup(false); setMenuPopup(!menuPopup)}} onMouseEnter={e => (e.currentTarget.src = menu2)} onMouseLeave={e => (e.currentTarget.src = menu1)}/>
                 <img className="icons mt-3" id="icon2" src={stats1} alt="stats.png" onClick={()=> {setMenuPopup(false); setHelpPopup(false); setSettingsPopup(false); setUserLoginPopup(false); setNewLoginPopup(false); setStatsPopup(!statsPopup)}} onMouseEnter={e => (e.currentTarget.src = stats2)} onMouseLeave={e => (e.currentTarget.src = stats1)}/>
             </div>
-            <h1 className="text-primary pt-2 col-6">
+            <h1 className="text-primary pt-2 col-6 mt-2">
                 <Link className='text-decoration-none' to={"/"}><p><span><img className="icons mb-2" id="logoTop" src={logo} alt="numericleLogo.png"/></span>umericle</p></Link>
             </h1>
             <div className="col-3">

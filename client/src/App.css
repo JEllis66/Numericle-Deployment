@@ -83,7 +83,7 @@
 }
 
 #todaysSolution{
-  font-size: 24pt;
+  font-size: 21pt;
 }
 
 .key_enterDelete{
@@ -103,7 +103,7 @@
   /* box-shadow: rgb(193, 193, 193) 2px 2px 2px; */
 }
 
-.guessGrid,.guessGridAns, .equals, .solutionGridAns, .correctDig, .nearDig, .wrongDig{
+.guessGrid,.guessGridAns, .equals, .solutionGridAns, .correctDig, .nearDig, .wrongDig, .notInEq{
   width: 6vw;
   min-width: 5vw;
   height: 60px;
@@ -113,7 +113,7 @@
   padding-top: 7px;
 }
 
-.guessGrid,.guessGridAns,.solutionGridAns, .correctDig, .nearDig, .wrongDig{
+.guessGrid,.guessGridAns,.solutionGridAns, .correctDig, .nearDig, .wrongDig, .notInEq{
   border: lightgray 2px solid;
 }
 
@@ -148,5 +148,9 @@ li,ul{
 .wrongDig {
   background-color: #dc3545;
   color: white;
+}
+
+.notInEq {
+  background-color: rgb(184, 184, 184);
 }
 

@@ -8,11 +8,11 @@
 }
 
 .popup-inner {
-    width: 600px;
-    height: 350px;
+    width: 80vw;
+    height: 70vh;
     position: absolute;
     padding: 30px;
-    left: 18%;
+    left: 10%;
     z-index: 10;
     background-color: white;
     border-radius: 1em;

@@ -29,6 +29,7 @@ const EquationGeneration = (props) =>{
         const maxExponents = 1;
         const possibleEdgeNums = "123456789"
         const possibleNums = "0123456789";
+        const multDivNums = "23456789"
         const possibleOps = "^*/+-";
         const possibleOpsPostExp = "*/+-"
         const possibleSuperscript = "23";
@@ -45,6 +46,8 @@ const EquationGeneration = (props) =>{
             else if(possibleOps.includes(initialEq[i-1])) {
                 if(initialEq[i-1] === '^'){
                     initialEq += possibleSuperscript[Math.floor(Math.random()*possibleSuperscript.length)];
+                } else if (initialEq[i-1] === '*' || initialEq[i-1] === '/'){
+                    initialEq += multDivNums[Math.floor(Math.random()*multDivNums.length)];
                 } else {
                     initialEq += possibleEdgeNums[Math.floor(Math.random()*possibleEdgeNums.length)];
                 }
@@ -179,7 +182,7 @@ const EquationGeneration = (props) =>{
         
     }
 
-    let isTriggerd = false;
+    let isTriggerd = true;
 
     const startTrigger = () =>{
         setTimeout(function() {

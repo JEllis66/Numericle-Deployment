@@ -130,21 +130,50 @@ const Main = (props) =>{
 
     function evalu(){
 
-        if(currentEq.length === 0){
+        if(currentEq === ""){
             return;
         }
-        else if(isValidToEval()){
+
+        let liveEq = "";
+        let error = false
+
+        for(let i = 0; i < equationLength; i++){
+            let tmp1 = (i+1).toString();
+            let tmp2 = document.getElementById(`row${currentRow}col${tmp1}`).innerHTML;
+            liveEq += tmp2;
+        }
+
+        for(let j = 1; j < liveEq.length; j++){
+            if("^*/+-".includes(liveEq[j] && "^*/+-".includes(liveEq[j-1]))){
+                error = true;
+            }
+        }
+        
+        if ("^*/+-".includes(liveEq[0]) || "^*/+-".includes(liveEq[liveEq.length-1])){
+            error = true;
+        }
+
+        if(!error){
             liveEval();
         } else {
             document.getElementById(`ans${currentRow}spot1`).innerHTML = "-";
             document.getElementById(`ans${currentRow}spot2`).innerHTML = "-";
             document.getElementById(`ans${currentRow}spot3`).innerHTML = "-";
-        }
+        } 
     }
 
     function liveEval() {
-        let answer = (math.evaluate(currentEq));
-        if((!Number.isInteger(answer)) || answer < 1 || answer > 999){
+        let liveEq = "";
+
+        for(let i = 0; i < equationLength; i++){
+            let tmp1 = (i+1).toString();
+            let tmp2 = document.getElementById(`row${currentRow}col${tmp1}`).innerHTML;
+            liveEq += tmp2;
+        }
+
+        let answer = (math.evaluate(liveEq));
+
+        if( answer < 1 || answer > 999){
             document.getElementById(`ans${currentRow}spot1`).innerHTML = "O";
             document.getElementById(`ans${currentRow}spot2`).innerHTML = "U";
             document.getElementById(`ans${currentRow}spot3`).innerHTML = "T";
@@ -180,7 +209,6 @@ const Main = (props) =>{
         }
 
         let parseLength = (parseInt(currentEq.length) + parseInt(todaysRev.length))
-        console.log(parseLength)
 
         if( parseLength !== equationLength){
             alert("Invalid Equation: Please use all 10 characters.");
@@ -190,10 +218,7 @@ const Main = (props) =>{
         let j = 0;
         for(let i = 0; i < equationLength; i++){
             let testerChar = i.toString();
-            console.log("testerChar: " + testerChar)
-            console.log("tester finalIndexListCheckpoint: " + finalIndexList)
             if(finalIndexList.includes(testerChar)){
-                console.log("i enters if1 at i="+i)
                 finalEqValueList += currentEq[j];
                 j++;
             } else {
@@ -201,8 +226,6 @@ const Main = (props) =>{
                 finalEqValueList += eq[i];
             }
         }
-
-        console.log("------- " + finalEqValueList)
 
         if(isValidToEval()){
 
@@ -262,15 +285,6 @@ const Main = (props) =>{
 
     }
 
-    const check = () =>{
-        console.log("indexListCounter: " + indexListCounter)
-        console.log("indexList: " + finalIndexList)
-        console.log("indexListLength: " + finalIndexList.length)
-        console.log("sorted Reveal array: " + todaysRevealSorted)
-        console.log("fin eq value list :" + finalEqValueList);
-        console.log("currentEq: " + currentEq)
-    }
-
     let isRevealed = false
 
     const startReveal = () =>{
@@ -308,6 +322,7 @@ const Main = (props) =>{
             document.getElementById(`ans${currentRow}spot1`).className = "nearDig";
         } else {
             document.getElementById(`ans${currentRow}spot1`).innerHTML = answer[0];
+            document.getElementById(`ans${currentRow}spot1`).className = "notInEq";
         }
 
         if (answer[1] === solutionFin[1]){
@@ -321,6 +336,7 @@ const Main = (props) =>{
             document.getElementById(`ans${currentRow}spot2`).className = "nearDig";
         } else {
             document.getElementById(`ans${currentRow}spot2`).innerHTML = answer[1];
+            document.getElementById(`ans${currentRow}spot2`).className = "notInEq";
         }
 
         if (answer[2] === solutionFin[2]){
@@ -334,6 +350,7 @@ const Main = (props) =>{
             document.getElementById(`ans${currentRow}spot3`).className = "nearDig";
         } else {
             document.getElementById(`ans${currentRow}spot3`).innerHTML = answer[2];
+            document.getElementById(`ans${currentRow}spot3`).className = "notInEq";
         }
 
         if(answer === solutionFin & finalEqValueList === eq){
@@ -370,7 +387,7 @@ const Main = (props) =>{
                 let hold4 = 0;
                 let hold5 = -1;
                 if(hold2 === -1){
-                    document.getElementById(`row${currentRow}col${pTemporary}`).className = "guessGrid"
+                    document.getElementById(`row${currentRow}col${pTemporary}`).className = "notInEq"
                 } else {
                     hold3 = finalIndexList[hold2];
                     console.log("hold3: " + hold3)
@@ -384,7 +401,7 @@ const Main = (props) =>{
                 if (hold1 === eq[temporary]){
                     document.getElementById(`row${currentRow}col${pTemporary}`).className = "correctDig"
                 } else if(hold1 === -1){
-                    document.getElementById(`row${currentRow}col${pTemporary}`).className = "guessGrid"
+                    document.getElementById(`row${currentRow}col${pTemporary}`).className = "notInEq"
                 }
                 else if(charList.includes(hold1) && eq[hold3] !== hold5 ){
                     document.getElementById(`row${currentRow}col${pTemporary}`).className = "nearDig"
