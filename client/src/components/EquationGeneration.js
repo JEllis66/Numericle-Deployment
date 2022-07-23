@@ -213,6 +213,7 @@ const EquationGeneration = (props) =>{
                 <p className="solutionGridAns bg-success text-white" id={`todayAnsSpot1`}>{solutionFin[0]}</p>
                 <p className="solutionGridAns bg-success text-white" id={`todayAnsSpot2`}>{solutionFin[1]}</p>
                 <p className="solutionGridAns bg-success text-white" id={`todayAnsSpot3`}>{solutionFin[2]}</p>
+                <button onClick={()=>startTrigger()}> boom goes the dynamite </button>
             </div>
         </div>
         
