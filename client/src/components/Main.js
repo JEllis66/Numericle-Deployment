@@ -468,7 +468,7 @@ const Main = (props) =>{
                     <p onClick={()=>keyPress(3)} className="col-2 key_unselected" id="key_3">3</p>
                     <p onClick={()=>keyPress("+")} className="col-2 key_unselected" id="key_+">+</p>
                     <p onClick={()=>keyPress("-")} className="col-2 key_unselected" id="key_-">-</p>
-                    <p onClick={()=>delPress()} className="col-2 key_enterDelete" id="key_delete">Delete</p>
+                    <p onClick={()=>delPress()} className="col-2 key_enterDelete" id="key_delete">Del</p>
                 </div>
                 <div id="row8" className="d-flex row justify-content-center">
                     <p onClick={()=>keyPress(4)}  className="col-2 key_unselected" id="key_4">4</p>
