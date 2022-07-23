@@ -405,6 +405,8 @@ const Main = (props) =>{
                 }
                 else if(charList.includes(hold1) && eq[hold3] !== hold5 ){
                     document.getElementById(`row${currentRow}col${pTemporary}`).className = "nearDig"
+                } else {
+                    document.getElementById(`row${currentRow}col${pTemporary}`).className = "notInEq"
                 }
             }
 
