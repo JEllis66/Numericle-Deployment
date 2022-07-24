@@ -39,10 +39,9 @@ const Navigation = () =>{
                     </div>
                     <ul className="row d-flex text-start mt-3 pb-4">
                         <li className="mt-2 mb-2"><Link className="text-decoration-none" to={"/home"}>Home</Link></li>
-                        <li onClick={()=> {setMenuPopup(false); setStatsPopup(false); setHelpPopup(false); setSettingsPopup(false); setNewLoginPopup(false); setUserLoginPopup(!userLoginPopup)}} className="mb-2"><a className="text-decoration-none" href="#">User Login</a></li>
+                        {/* <li onClick={()=> {setMenuPopup(false); setStatsPopup(false); setHelpPopup(false); setSettingsPopup(false); setNewLoginPopup(false); setUserLoginPopup(!userLoginPopup)}} className="mb-2"><a className="text-decoration-none" href="#">User Login</a></li> */}
                         <li className="mb-2"><Link className="text-decoration-none" to={"/discussion"}>Daily Discussion</Link></li>
                         <li className="mb-2"><a className="text-decoration-none" href="https://github.com/JEllis66/Numericle">Numericle's GitHub Repo</a></li>
-                        <li className="mb-2"><a className="text-decoration-none" href="https://jtellis.com/">Creator's Homepage</a></li>
                     </ul>    
                 </Menu>
                 <Stats trigger={statsPopup} setTrigger={setStatsPopup}>
@@ -68,7 +67,7 @@ const Navigation = () =>{
                         <h2 className="text-secondary"> Settings:</h2>
                         <button className="closePopUp" onClick={()=> {setMenuPopup(false); setStatsPopup(false); setHelpPopup(false); setUserLoginPopup(false); setNewLoginPopup(false); setSettingsPopup(!settingsPopup)}}>X</button>
                     </div>
-                    <p className="mt-4" >Settings will go here with much better styling...</p>
+                    <p className="mt-4" >Settings will go here...</p>
                     <label className="d-flex text-start mt-4 mb-2">
                         <span>Dark Mode</span>
                         <input type="checkbox"/>
