@@ -12,11 +12,11 @@
     height: 70vh;
     position: absolute;
     padding: 30px;
-    left: 10%;
+    /* left: 10%; */
     z-index: 10;
     background-color: white;
     border-radius: 1em;
-    box-shadow: rgba(0,0,0,0.8) 30px 30px 300px;
+    box-shadow: rgba(0,0,0,0.7) 30px 30px 300px;
 }
 
 .popup-inner .close-btn{

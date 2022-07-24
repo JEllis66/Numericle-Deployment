@@ -188,15 +188,10 @@ const Main = (props) =>{
                 document.getElementById(`ans${currentRow}spot1`).innerHTML = answer.toString()[0];
                 document.getElementById(`ans${currentRow}spot2`).innerHTML = answer.toString()[1];
                 document.getElementById(`ans${currentRow}spot3`).innerHTML = answer.toString()[2];
-            } else if (answer.toString().length === 3) {
+            } else {
                 document.getElementById(`ans${currentRow}spot1`).innerHTML = answer.toString()[0];
                 document.getElementById(`ans${currentRow}spot2`).innerHTML = answer.toString()[1];
                 document.getElementById(`ans${currentRow}spot3`).innerHTML = answer.toString()[2];
-            } else {
-                console.log(currentSol)
-                document.getElementById(`ans${currentRow}spot1`).innerHTML = "-";
-                document.getElementById(`ans${currentRow}spot2`).innerHTML = "-";
-                document.getElementById(`ans${currentRow}spot3`).innerHTML = "-";
             }
         }
 
