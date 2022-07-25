@@ -67,6 +67,10 @@
   font-size: 20px;
 }
 
+.key_pressed:hover{
+  cursor: pointer;
+}
+
 #logoTop{
   height: 38px;
   transform: translateX(5px);
