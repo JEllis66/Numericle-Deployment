@@ -372,24 +372,24 @@ const Main = (props) =>{
 
                 let temporary = finalIndexList[a]
                 let pTemporary = parseInt(temporary) + 1
-                console.log(temporary)
-                console.log("doc val: " + document.getElementById(`row${currentRow}col${pTemporary}`).innerHTML)
                 let hold1 = document.getElementById(`row${currentRow}col${pTemporary}`).innerHTML;
-                console.log("hold1: " + hold1)
                 let hold2 = parseInt(charList.indexOf(hold1));
-                console.log("hold2: " + hold2)
                 let hold3 = 0;
                 let hold4 = 0;
                 let hold5 = -1;
                 if(hold2 === -1){
                     document.getElementById(`row${currentRow}col${pTemporary}`).className = "notInEq"
+                    for(let i = 0; i < 16; i++){
+                        let tmp = document.getElementById(`key_${i}`).innerHTML;
+                        let tmp2 = currentEq[a];
+                        if(tmp === tmp2){
+                            document.getElementById(`key_${i}`).className = "col-2 key_pressed";
+                        }
+                    }
                 } else {
                     hold3 = finalIndexList[hold2];
-                    console.log("hold3: " + hold3)
                     hold4 = parseInt(hold3) + 1
-                    console.log("hold4: " + hold4)
                     hold5 = document.getElementById(`row${currentRow}col${hold4}`).innerHTML
-                    console.log("hold5: " + hold5)
                 }
             
 
@@ -397,11 +397,25 @@ const Main = (props) =>{
                     document.getElementById(`row${currentRow}col${pTemporary}`).className = "correctDig"
                 } else if(hold1 === -1){
                     document.getElementById(`row${currentRow}col${pTemporary}`).className = "notInEq"
+                    for(let i = 0; i < 16; i++){
+                        let tmp = document.getElementById(`key_${i}`).innerHTML;
+                        let tmp2 = currentEq[a];
+                        if(tmp === tmp2){
+                            document.getElementById(`key_${i}`).className = "col-2 key_pressed";
+                        }
+                    }
                 }
                 else if(charList.includes(hold1) && eq[hold3] !== hold5 ){
                     document.getElementById(`row${currentRow}col${pTemporary}`).className = "nearDig"
                 } else {
                     document.getElementById(`row${currentRow}col${pTemporary}`).className = "notInEq"
+                    for(let i = 0; i < 16; i++){
+                        let tmp = document.getElementById(`key_${i}`).innerHTML;
+                        let tmp2 = currentEq[a];
+                        if(tmp === tmp2){
+                            document.getElementById(`key_${i}`).className = "col-2 key_pressed";
+                        }
+                    }
                 }
             }
 
@@ -480,24 +494,24 @@ const Main = (props) =>{
                     <p onClick={()=>keyPress(1)} className="col-2 key_unselected" id="key_1">1</p>
                     <p onClick={()=>keyPress(2)} className="col-2 key_unselected" id="key_2">2</p>
                     <p onClick={()=>keyPress(3)} className="col-2 key_unselected" id="key_3">3</p>
-                    <p onClick={()=>keyPress("+")} className="col-2 key_unselected" id="key_+">+</p>
-                    <p onClick={()=>keyPress("-")} className="col-2 key_unselected" id="key_-">-</p>
+                    <p onClick={()=>keyPress("+")} className="col-2 key_unselected" id="key_10">+</p>
+                    <p onClick={()=>keyPress("-")} className="col-2 key_unselected" id="key_11">-</p>
                     <p onClick={()=>delPress()} className="col-2 key_enterDelete" id="key_delete">Del</p>
                 </div>
                 <div id="row8" className="d-flex row justify-content-center">
                     <p onClick={()=>keyPress(4)}  className="col-2 key_unselected" id="key_4">4</p>
                     <p onClick={()=>keyPress(5)}  className="col-2 key_unselected" id="key_5">5</p>
                     <p onClick={()=>keyPress(6)}  className="col-2 key_unselected" id="key_6">6</p>
-                    <p onClick={()=>keyPress("^")} className="col-2 key_unselected" id="key_^">^</p>
-                    <p onClick={()=>enterPress()} className="col-4 key_enterDelete" id="key_enter"> Enter </p>
+                    <p onClick={()=>keyPress("^")} className="col-2 key_unselected" id="key_12">^</p>
+                    <p onClick={()=>enterPress()} className="col-4 key_enterDelete" id="key_13"> Enter </p>
                 </div>
                 <div id="row9" className="d-flex row justify-content-center">
                     <p onClick={()=>keyPress(7)}  className="col-2 key_unselected" id="key_7">7</p>
                     <p onClick={()=>keyPress(8)}  className="col-2 key_unselected" id="key_8">8</p>
                     <p onClick={()=>keyPress(9)}  className="col-2 key_unselected" id="key_9">9</p>
                     <p onClick={()=>keyPress(0)}  className="col-2 key_unselected" id="key_0">0</p>
-                    <p onClick={()=>keyPress("*")}  className="col-2 key_unselected" id="key_*">*</p>
-                    <p onClick={()=>keyPress("/")} className="col-2 key_unselected" id="key_/">/</p>
+                    <p onClick={()=>keyPress("*")}  className="col-2 key_unselected" id="key_14">*</p>
+                    <p onClick={()=>keyPress("/")} className="col-2 key_unselected" id="key_15">/</p>
                     {/* <p onClick={()=>check()} className="key_unselected">Test</p> */}
                     
                 </div>

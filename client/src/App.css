@@ -43,7 +43,6 @@
 }
 
 .key_unselected, .key_selected{
-  /* width: 60px; */
   border: white 2px solid;
   height: 70px; 
   background-color: rgb(224, 224, 224);
@@ -56,20 +55,16 @@
 .key_unselected:hover, .key_selected:hover{
   background-color: rgb(194, 194, 194);
   cursor: pointer;
-  /* box-shadow: #282c34 1px 1px 1px; */
 }
 
 .key_pressed{
-  /* width: 60px; */
-  height: 70px;
-  background-color: rgb(164, 164, 164);
   border: white 2px solid;
-  margin-right: 10px;
-  font-size: 20px;
+  height: 70px; 
+  background-color: rgb(128, 128, 128);
   text-align: center;
   padding-top: 18px;
   border-radius: 1em;
-  box-shadow: rgb(224, 224, 224) 1px 1px 1px;
+  font-size: 20px;
 }
 
 #logoTop{
@@ -87,7 +82,6 @@
 }
 
 .key_enterDelete{
-  /* width: 138px; */
   font-size: 22px;
   height: 70px; 
   padding-top: 17px;
@@ -100,7 +94,6 @@
 .key_enterDelete:hover{
   background-color: rgb(32,32,32);
   cursor: pointer;
-  /* box-shadow: rgb(193, 193, 193) 2px 2px 2px; */
 }
 
 .guessGrid,.guessGridAns, .equals, .solutionGridAns, .correctDig, .nearDig, .wrongDig, .notInEq{
