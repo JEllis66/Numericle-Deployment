@@ -382,7 +382,7 @@ const Main = (props) =>{
                     for(let i = 0; i < 16; i++){
                         let tmp = document.getElementById(`key_${i}`).innerHTML;
                         let tmp2 = currentEq[a];
-                        if(tmp === tmp2){
+                        if(tmp === tmp2 && (!eq.includes(tmp2))){
                             document.getElementById(`key_${i}`).className = "col-2 key_pressed";
                         }
                     }
@@ -400,7 +400,7 @@ const Main = (props) =>{
                     for(let i = 0; i < 16; i++){
                         let tmp = document.getElementById(`key_${i}`).innerHTML;
                         let tmp2 = currentEq[a];
-                        if(tmp === tmp2){
+                        if(tmp === tmp2 && (!eq.includes(tmp2))){
                             document.getElementById(`key_${i}`).className = "col-2 key_pressed";
                         }
                     }
@@ -412,7 +412,7 @@ const Main = (props) =>{
                     for(let i = 0; i < 16; i++){
                         let tmp = document.getElementById(`key_${i}`).innerHTML;
                         let tmp2 = currentEq[a];
-                        if(tmp === tmp2){
+                        if(tmp === tmp2 && (!eq.includes(tmp2))){
                             document.getElementById(`key_${i}`).className = "col-2 key_pressed";
                         }
                     }
