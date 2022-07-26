@@ -154,7 +154,7 @@ const Main = (props) =>{
         }
 
         if(!error){
-            //liveEval();
+            liveEval();
             console.log('check liveeval')
         } else {
             document.getElementById(`ans${currentRow}spot1`).innerHTML = "-";
@@ -169,7 +169,9 @@ const Main = (props) =>{
         for(let i = 0; i < equationLength; i++){
             let tmp1 = (i+1).toString();
             let tmp2 = document.getElementById(`row${currentRow}col${tmp1}`).innerHTML;
-            liveEq += tmp2;
+            if(tmp2 !== "" && tmp2 !== " "){
+                liveEq += tmp2;
+            }
         }
 
         let answer = (math.evaluate(liveEq));
