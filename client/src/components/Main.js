@@ -363,6 +363,12 @@ const Main = (props) =>{
                 charList += eq[tmpp]
             }
 
+            let guessInxSolutionNums = ""
+            for(let h = 0; h < finalIndexList.length; h++){
+                let temp = finalIndexList[h];
+                guessInxSolutionNums += eq[temp];
+            }
+
             for(let a = 0; a < currentEq.length; a++){
 
                 let temporary = finalIndexList[a]
@@ -377,7 +383,7 @@ const Main = (props) =>{
                     for(let i = 0; i < 16; i++){
                         let tmp = document.getElementById(`key_${i}`).innerHTML;
                         let tmp2 = currentEq[a];
-                        if(tmp === tmp2 && (!eq.includes(tmp2))){
+                        if(tmp === tmp2 && (!guessInxSolutionNums.includes(tmp2))){
                             document.getElementById(`key_${i}`).className = "col-2 key_pressed";
                         }
                     }
@@ -395,7 +401,7 @@ const Main = (props) =>{
                     for(let i = 0; i < 16; i++){
                         let tmp = document.getElementById(`key_${i}`).innerHTML;
                         let tmp2 = currentEq[a];
-                        if(tmp === tmp2 && (!eq.includes(tmp2))){
+                        if(tmp === tmp2 && (!guessInxSolutionNums.includes(tmp2))){
                             document.getElementById(`key_${i}`).className = "col-2 key_pressed";
                         }
                     }
@@ -407,7 +413,7 @@ const Main = (props) =>{
                     for(let i = 0; i < 16; i++){
                         let tmp = document.getElementById(`key_${i}`).innerHTML;
                         let tmp2 = currentEq[a];
-                        if(tmp === tmp2 && (!eq.includes(tmp2))){
+                        if(tmp === tmp2 && (!guessInxSolutionNums.includes(tmp2))){
                             document.getElementById(`key_${i}`).className = "col-2 key_pressed";
                         }
                     }
