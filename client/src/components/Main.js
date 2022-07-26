@@ -136,17 +136,21 @@ const Main = (props) =>{
         for(let i = 0; i < equationLength; i++){
             let tmp1 = (i+1).toString();
             let tmp2 = document.getElementById(`row${currentRow}col${tmp1}`).innerHTML;
-            liveEq += tmp2;
+            if(tmp2 !== "" && tmp2 !== " "){
+                liveEq += tmp2;
+            }
         }
 
         for(let j = 1; j < liveEq.length; j++){
             if("^*/+-".includes(liveEq[j] && "^*/+-".includes(liveEq[j-1]))){
                 error = true;
+                console.log("check 1")
             }
         }
         
         if ("^*/+-".includes(liveEq[0]) || "^*/+-".includes(liveEq[liveEq.length-1])){
             error = true;
+            console.log("check 2")
         }
 
         if(!error){
