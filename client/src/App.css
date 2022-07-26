@@ -44,12 +44,12 @@
 
 .key_unselected, .key_selected{
   border: white 2px solid;
-  height: 70px; 
+  height: 60px; 
   background-color: rgb(224, 224, 224);
   text-align: center;
-  padding-top: 18px;
+  padding-top: 14px;
   border-radius: 1em;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .key_unselected:hover, .key_selected:hover{
@@ -59,12 +59,12 @@
 
 .key_pressed{
   border: white 2px solid;
-  height: 70px; 
+  height: 60px; 
   background-color: rgb(128, 128, 128);
   text-align: center;
-  padding-top: 18px;
+  padding-top: 14px;
   border-radius: 1em;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .key_pressed:hover{
@@ -87,8 +87,8 @@
 
 .key_enterDelete{
   font-size: 22px;
-  height: 70px; 
-  padding-top: 17px;
+  height: 60px; 
+  padding-top: 13px;
   border: white 2px solid;
   color: white;
   background-color: rgb(86, 86, 86);
@@ -103,11 +103,11 @@
 .guessGrid,.guessGridAns, .equals, .solutionGridAns, .correctDig, .nearDig, .wrongDig, .notInEq{
   width: 6vw;
   min-width: 5vw;
-  height: 60px;
+  height: 50px;
   margin-right: 2px;
   text-align: center;
-  font-size: 20pt;
-  padding-top: 7px;
+  font-size: 18pt;
+  padding-top: 5px;
 }
 
 .guessGrid,.guessGridAns,.solutionGridAns, .correctDig, .nearDig, .wrongDig, .notInEq{

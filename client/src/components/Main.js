@@ -468,7 +468,7 @@ const Main = (props) =>{
 
     return (
         
-        <div className="container mt-5 mb-5">
+        <div className="container mt-4 mb-4">
             
             <EquationGeneration eq={eq} solutionFin={solutionFin} setEq={setEq} setSolutionFin={setSolutionFin}/>
             
@@ -488,7 +488,7 @@ const Main = (props) =>{
                 ))
             }
 
-            <hr className="mt-5 mb-5"/>
+            <hr className="mt-3 mb-4"/>
 
             <div id="keypad_interface" className="">
                 <div id="row7" className="d-flex row justify-content-center">
