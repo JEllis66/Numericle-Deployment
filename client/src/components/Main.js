@@ -154,7 +154,8 @@ const Main = (props) =>{
         }
 
         if(!error){
-            liveEval();
+            //liveEval();
+            console.log('check liveeval')
         } else {
             document.getElementById(`ans${currentRow}spot1`).innerHTML = "-";
             document.getElementById(`ans${currentRow}spot2`).innerHTML = "-";
