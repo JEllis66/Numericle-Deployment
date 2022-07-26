@@ -151,3 +151,6 @@ li,ul{
   background-color: rgb(184, 184, 184);
 }
 
+#row8, #row9{
+  margin-bottom: 0px !important;
+}
