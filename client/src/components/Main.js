@@ -468,7 +468,7 @@ const Main = (props) =>{
 
     return (
         
-        <div className="container mt-4 mb-4">
+        <div className="container mt-3 mb-3">
             
             <EquationGeneration eq={eq} solutionFin={solutionFin} setEq={setEq} setSolutionFin={setSolutionFin}/>
             
@@ -488,7 +488,7 @@ const Main = (props) =>{
                 ))
             }
 
-            <hr className="mt-3 mb-2"/>
+            <hr className="mt-3 mb-3"/>
 
             <div id="keypad_interface" className="">
                 <div id="row7" className="d-flex row justify-content-center">
@@ -499,20 +499,21 @@ const Main = (props) =>{
                     <p onClick={()=>keyPress("-")} className="col-2 key_unselected" id="key_11">-</p>
                     <p onClick={()=>delPress()} className="col-2 key_enterDelete" id="key_delete">Del</p>
                 </div>
-                <div id="row8" className="d-flex mt-0 row justify-content-center">
+                <div id="row8" className="d-flex row justify-content-center">
                     <p onClick={()=>keyPress(4)}  className="col-2 key_unselected" id="key_4">4</p>
                     <p onClick={()=>keyPress(5)}  className="col-2 key_unselected" id="key_5">5</p>
                     <p onClick={()=>keyPress(6)}  className="col-2 key_unselected" id="key_6">6</p>
                     <p onClick={()=>keyPress("^")} className="col-2 key_unselected" id="key_12">^</p>
                     <p onClick={()=>enterPress()} className="col-4 key_enterDelete" id="key_13"> Enter </p>
                 </div>
-                <div id="row9" className="d-flex mt-0 row justify-content-center">
+                <div id="row9" className="d-flex row justify-content-center">
                     <p onClick={()=>keyPress(7)}  className="col-2 key_unselected" id="key_7">7</p>
                     <p onClick={()=>keyPress(8)}  className="col-2 key_unselected" id="key_8">8</p>
                     <p onClick={()=>keyPress(9)}  className="col-2 key_unselected" id="key_9">9</p>
                     <p onClick={()=>keyPress(0)}  className="col-2 key_unselected" id="key_0">0</p>
                     <p onClick={()=>keyPress("*")}  className="col-2 key_unselected" id="key_14">*</p>
                     <p onClick={()=>keyPress("/")} className="col-2 key_unselected" id="key_15">/</p>
+                    {/* <p onClick={()=>check()} className="key_unselected">Test</p> */}
                     
                 </div>
                 <div id="row10" className="d-flex justify-content-center">
