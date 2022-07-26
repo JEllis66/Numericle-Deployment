@@ -79,15 +79,11 @@ const Main = (props) =>{
         }
 
         if (indexListCounter < finalIndexList.length){
-            console.log("entry listcounter: " + indexListCounter)
             let temp = parseInt(finalIndexList[indexListCounter]) + 1;
-            console.log("parse: " + parseInt(finalIndexList[indexListCounter]))
             temp = temp.toString()
-            console.log("temp " + temp)
             document.getElementById(`row${currentRow}col${temp}`).innerHTML = value;
             setCurrentEq(currentEq + value.toString())
             setIndexListCounter(indexListCounter + 1)
-            console.log("after increase listcounter: " + indexListCounter)
         } else if (indexListCounter === finalIndexList.length) {
             let temp = parseInt(finalIndexList[indexListCounter-1]) + 1;
             document.getElementById(`row${currentRow}col${temp}`).innerHTML = value;
@@ -217,7 +213,6 @@ const Main = (props) =>{
                 finalEqValueList += currentEq[j];
                 j++;
             } else {
-                console.log("i enters else2 at i="+i)
                 finalEqValueList += eq[i];
             }
         }
