@@ -142,20 +142,17 @@ const Main = (props) =>{
         }
 
         for(let j = 1; j < liveEq.length; j++){
-            if("^*/+-".includes(liveEq[j] && "^*/+-".includes(liveEq[j-1]))){
+            if("^*/+-".includes(liveEq[j]) && "^*/+-".includes(liveEq[j-1])){
                 error = true;
-                console.log("check 1")
             }
         }
         
         if ("^*/+-".includes(liveEq[0]) || "^*/+-".includes(liveEq[liveEq.length-1])){
             error = true;
-            console.log("check 2")
         }
 
         if(!error){
             liveEval();
-            console.log('check liveeval')
         } else {
             document.getElementById(`ans${currentRow}spot1`).innerHTML = "-";
             document.getElementById(`ans${currentRow}spot2`).innerHTML = "-";
