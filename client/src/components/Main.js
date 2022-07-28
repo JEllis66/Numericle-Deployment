@@ -526,17 +526,17 @@ const Main = (props) =>{
     }
 
     function gameWin(){
-        for(let y = 1; y < numberOfGuesses+1; y++){
-            for(let x = 0; x<finalIndexList.length; x++ ){
-                let tmp = finalIndexList[x];
-                let tmp2 = parseInt(tmp) + 1;
-                let tmp3 = tmp2.toString();
-                if(document.getElementById(`row${y}col${tmp3}`).className.includes('currentBlock')){
-                    document.getElementById(`row${y}col${tmp3}`).className = 'guessGrid';
-                }
+
+        alert("winner!!!");
+
+        let a = parseInt(finalIndexList[0]) + 1;
+
+        for(let b = 1; b < numberOfGuesses+1; b++){
+            if(document.getElementById(`row${b}col${a}`).className.includes('B')){
+                document.getElementById(`row${b}col${a}`).className = 'guessGrid';
             }
         }
-        alert("winner!!!")
+
     }
 
     function gameLose(){
