@@ -41,7 +41,7 @@ const Navigation = () =>{
                         <li className="mt-2 mb-2"><Link className="text-decoration-none" to={"/home"}>Home</Link></li>
                         {/* <li onClick={()=> {setMenuPopup(false); setStatsPopup(false); setHelpPopup(false); setSettingsPopup(false); setNewLoginPopup(false); setUserLoginPopup(!userLoginPopup)}} className="mb-2"><a className="text-decoration-none" href="#">User Login</a></li> */}
                         <li className="mb-2"><Link className="text-decoration-none" to={"/discussion"}>Daily Discussion</Link></li>
-                        <li className="mb-2"><a className="text-decoration-none" href="https://github.com/JEllis66/Numericle">Numericle's GitHub Repo</a></li>
+                        <li className="mb-2"><a className="text-decoration-none" href="https://github.com/JEllis66/Numericle-Depolyment">Numericle's GitHub Repo</a></li>
                     </ul>    
                 </Menu>
                 <Stats trigger={statsPopup} setTrigger={setStatsPopup}>
