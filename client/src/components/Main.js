@@ -226,7 +226,7 @@ const Main = (props) =>{
             let answer = (math.evaluate(finalEqValueList));
             
             if(finalEqValueList.length !== equationLength){
-                alert("Invalid Equation: Please use all 10 characters.")
+                alert("Invalid Equation: Please use all 10 characters in your equation.")
             }
             else if((Number.isInteger(answer)) || answer >= 1 || answer <= 999){
                 submission();
