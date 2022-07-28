@@ -42,32 +42,38 @@
   transform: translateX(-5px);
 }
 
-.key_unselected, .key_selected{
+.key_unselected, .key_selected, .key_pressed, .key_within, .key_correct{
   border: white 2px solid;
+  color: white;
   height: 60px; 
-  background-color: rgb(224, 224, 224);
   text-align: center;
-  padding-top: 14px;
-  border-radius: 1em;
-  font-size: 18px;
+  padding-top: 11px;
+  border-radius: 10px;
+  font-size: 22px;
+}
+
+.key_unselected, .key_selected{
+  background-color: rgb(180, 180, 180);
 }
 
 .key_unselected:hover, .key_selected:hover{
-  background-color: rgb(194, 194, 194);
+  background-color: rgb(128, 128, 128);
   cursor: pointer;
 }
 
 .key_pressed{
-  border: white 2px solid;
-  height: 60px; 
-  background-color: rgb(128, 128, 128);
-  text-align: center;
-  padding-top: 14px;
-  border-radius: 1em;
-  font-size: 18px;
+  background-color: rgb(72, 72, 72);
 }
 
-.key_pressed:hover{
+.key_within{
+  background-color: #ffc107;
+}
+
+.key_correct{
+  background-color: #198754;
+}
+
+.key_pressed:hover,.key_within,.key_correct{
   cursor: pointer;
 }
 
@@ -78,29 +84,41 @@
 }
 
 .numericleColor{
-  color: #2B01FD;
+  color: #0275d8;
 }
 
 #todaysSolution{
   font-size: 21pt;
 }
 
-.key_enterDelete{
+.key_enter, .key_del{
   font-size: 22px;
   height: 60px; 
-  padding-top: 13px;
+  padding-top: 12px;
   border: white 2px solid;
   color: white;
-  background-color: rgb(86, 86, 86);
-  border-radius: 1em;
+  border-radius: 10px;
 }
 
-.key_enterDelete:hover{
-  background-color: rgb(32,32,32);
+.key_enter{
+  background-color: #0275d8;
+}
+
+.key_del{
+  background-color: #ff7f7f;
+}
+
+.key_del:hover{
+  background-color: rgb(255, 64, 64);
   cursor: pointer;
 }
 
-.guessGrid,.guessGridAns, .equals, .solutionGridAns, .correctDig, .nearDig, .wrongDig, .notInEq{
+.key_enter:hover{
+  background-color: rgb(36, 42, 215);
+  cursor: pointer;
+}
+
+.guessGrid,.guessGridAns, .currentBlock, .equals, .solutionGridAns, .correctDig, .nearDig, .wrongDig, .notInEq{
   width: 6vw;
   min-width: 5vw;
   height: 50px;
@@ -112,6 +130,10 @@
 
 .guessGrid,.guessGridAns,.solutionGridAns, .correctDig, .nearDig, .wrongDig, .notInEq{
   border: lightgray 2px solid;
+}
+
+.currentBlock{
+  border: rgb(218, 54, 54) 2px solid !important;
 }
 
 .closePopUp{
@@ -140,6 +162,7 @@ li,ul{
 
 .nearDig{
   background-color: #ffc107;
+  color: white;
 } 
 
 .wrongDig {
@@ -149,8 +172,10 @@ li,ul{
 
 .notInEq {
   background-color: rgb(184, 184, 184);
+  color: white;
 }
 
 #row8, #row9{
   margin-bottom: 0px !important;
+  margin-top: 0px !important;
 }

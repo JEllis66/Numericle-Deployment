@@ -22,7 +22,9 @@ const Main = (props) =>{
     const [todaysRevealSorted, setTodaysRevealSorted] = useState("");
 
     const [currentRow, setCurrentRow] = useState(1);
-    let currentCol = 1;
+    const [currentCol, setCurrentCol] = useState(0);
+    const [colCounter, setColCounter] = useState(0);
+
     let indexList = "0123456789";
     let finalEqValueList = "";
     let eqLength = [];
@@ -90,10 +92,7 @@ const Main = (props) =>{
             setCurrentEq(currentEq.substring(0,finalIndexList.length-1) + value.toString());
         }
             
-        else{
-            return;
-        }
-
+        currentBlock(1);
         evalu();
     }
     
@@ -121,6 +120,7 @@ const Main = (props) =>{
             return;
         }
 
+        currentBlock(3);
         evalu();
     }
 
@@ -230,6 +230,7 @@ const Main = (props) =>{
             }
             else if((Number.isInteger(answer)) || answer >= 1 || answer <= 999){
                 submission();
+                currentBlock(2);
             }
             else {
                 alert("Invalid Equation: Please correct and try again.")
@@ -238,6 +239,67 @@ const Main = (props) =>{
         } else if (!isValidToEval()) {
             alert("Invalid Equation: Please correct and try again.")
         }
+    }
+
+    function currentBlock(num){
+
+        if( num !==3 && indexListCounter === finalIndexList.length -1 || currentRow > 6){
+            return;
+        }
+
+        for(let y = 1; y < numberOfGuesses+1; y++){
+            for(let x = 0; x<finalIndexList.length; x++ ){
+                let tmp = finalIndexList[x];
+                let tmp2 = parseInt(tmp) + 1;
+                let tmp3 = tmp2.toString();
+                if(document.getElementById(`row${y}col${tmp3}`).className.includes('currentBlock')){
+                    document.getElementById(`row${y}col${tmp3}`).className = 'guessGrid';
+                }
+            }
+        }
+
+        let t = "";
+        if(indexListCounter < finalIndexList.length-1){
+            t = parseInt(finalIndexList[indexListCounter+1]) + 1;
+        } else if (indexListCounter === finalIndexList.length-1){
+            t = parseInt(finalIndexList[indexListCounter]) + 1;
+        } else if (num === 3 && indexListCounter > 0){
+            t = parseInt(finalIndexList[indexListCounter-1]) + 1;
+        } else {
+            t = parseInt(finalIndexList[indexListCounter-1]) + 1;
+        }
+        let u = t.toString();
+    
+        if(num === 1){
+            document.getElementById(`row${currentRow}col${u}`).className += " currentBlock";
+        } else if(num===2){
+            if(currentRow < 6){
+                let n = parseInt(finalIndexList[0]) + 1;
+                let o = currentRow+1;
+                document.getElementById(`row${o}col${n}`).className = "guessGrid currentBlock";
+            } else {
+                return;
+            }
+        } else if(num===3 && indexListCounter >1){
+            if(indexListCounter === 6 || indexListCounter < 2){
+                let f = parseInt(finalIndexList[finalIndexList.length-1]) + 1;
+                let g = f.toString();
+                document.getElementById(`row${currentRow}col${g}`).className = "guessGrid currentBlock";
+                return;
+            }
+            console.log("here2")
+            let a = indexListCounter-1;
+            let b = parseInt(finalIndexList[a]) + 1;
+            let c = b.toString();
+            let d = parseInt(finalIndexList[a+1]) + 1;
+            let e = d.toString();
+            document.getElementById(`row${currentRow}col${c}`).className += " currentBlock";
+            document.getElementById(`row${currentRow}col${e}`).className = "guessGrid";
+        } else if(num===3 && indexListCounter === 1){
+            let j = parseInt(finalIndexList[0]) + 1;
+            document.getElementById(`row${currentRow}col${j}`).className = "guessGrid currentBlock";
+        }
+
     }
 
     function reveal(){
@@ -262,6 +324,9 @@ const Main = (props) =>{
             indexList = indexList.replace(todaysReveal[g], '')
         }
 
+        let r = parseInt(indexList[0]) + 1
+        let s = r.toString();
+        document.getElementById(`row1col${s}`).className += " currentBlock";
         setFinalIndexList(indexList);         
 
         let todaysRevealSortHolder = [];
@@ -399,7 +464,8 @@ const Main = (props) =>{
             
 
                 if (hold1 === eq[temporary]){
-                    document.getElementById(`row${currentRow}col${pTemporary}`).className = "correctDig"
+                    document.getElementById(`row${currentRow}col${pTemporary}`).className = "correctDig";
+                    document.getElementById(`key_${hold1}`).className = "col-2 key_correct";
                 } else if(hold1 === -1){
                     document.getElementById(`row${currentRow}col${pTemporary}`).className = "notInEq"
                     for(let i = 0; i < 16; i++){
@@ -411,7 +477,8 @@ const Main = (props) =>{
                     }
                 }
                 else if(charList.includes(hold1) && eq[hold3] !== hold5 ){
-                    document.getElementById(`row${currentRow}col${pTemporary}`).className = "nearDig"
+                    document.getElementById(`row${currentRow}col${pTemporary}`).className = "nearDig";
+                    document.getElementById(`key_${hold1}`).className = "col-2 key_within";
                 } else {
                     document.getElementById(`row${currentRow}col${pTemporary}`).className = "notInEq"
                     for(let i = 0; i < 16; i++){
@@ -426,7 +493,7 @@ const Main = (props) =>{
 
             setCurrentEq("");
             if(currentRow < 6){
-                setCurrentRow(currentRow+1)
+                setCurrentRow(currentRow+1);
             }
             setIndexListCounter(0);
             return;
@@ -439,6 +506,23 @@ const Main = (props) =>{
     }
 
     function gameLose(){
+        for(let i = 0; i < finalIndexList.length; i++){
+            let k = parseInt(finalIndexList[i]) + 1;
+            let m = finalIndexList[i];
+            let j = eq[m];
+            console.log("here: " + k, m, j);
+            document.getElementById(`row${currentRow}col${k}`).innerHTML = j;
+        }
+        for(let r = 0; r < equationLength; r++){
+            let q =  r+1;
+            document.getElementById(`row${currentRow}col${q}`).className = 'wrongDig';
+        }
+        document.getElementById(`ans${currentRow}spot1`).innerHTML = solutionFin[0];
+        document.getElementById(`ans${currentRow}spot1`).className = 'wrongDig';
+        document.getElementById(`ans${currentRow}spot2`).innerHTML = solutionFin[1];
+        document.getElementById(`ans${currentRow}spot2`).className = 'wrongDig';
+        document.getElementById(`ans${currentRow}spot3`).innerHTML = solutionFin[2];
+        document.getElementById(`ans${currentRow}spot3`).className = 'wrongDig';
         alert("Loser!")
     }
 
@@ -501,14 +585,14 @@ const Main = (props) =>{
                     <p onClick={()=>keyPress(3)} className="col-2 key_unselected" id="key_3">3</p>
                     <p onClick={()=>keyPress("+")} className="col-2 key_unselected" id="key_10">+</p>
                     <p onClick={()=>keyPress("-")} className="col-2 key_unselected" id="key_11">-</p>
-                    <p onClick={()=>delPress()} className="col-2 key_enterDelete" id="key_delete">Del</p>
+                    <p onClick={()=>delPress()} className="col-2 key_del" id="key_delete">Del</p>
                 </div>
                 <div id="row8" className="d-flex row justify-content-center">
                     <p onClick={()=>keyPress(4)}  className="col-2 key_unselected" id="key_4">4</p>
                     <p onClick={()=>keyPress(5)}  className="col-2 key_unselected" id="key_5">5</p>
                     <p onClick={()=>keyPress(6)}  className="col-2 key_unselected" id="key_6">6</p>
                     <p onClick={()=>keyPress("^")} className="col-2 key_unselected" id="key_12">^</p>
-                    <p onClick={()=>enterPress()} className="col-4 key_enterDelete" id="key_13"> Enter </p>
+                    <p onClick={()=>enterPress()} className="col-4 key_enter" id="key_13"> Enter </p>
                 </div>
                 <div id="row9" className="d-flex row justify-content-center">
                     <p onClick={()=>keyPress(7)}  className="col-2 key_unselected" id="key_7">7</p>
@@ -517,10 +601,6 @@ const Main = (props) =>{
                     <p onClick={()=>keyPress(0)}  className="col-2 key_unselected" id="key_0">0</p>
                     <p onClick={()=>keyPress("*")}  className="col-2 key_unselected" id="key_14">*</p>
                     <p onClick={()=>keyPress("/")} className="col-2 key_unselected" id="key_15">/</p>
-                    {/* <p onClick={()=>check()} className="key_unselected">Test</p> */}
-                    
-                </div>
-                <div id="row10" className="d-flex justify-content-center">
                     
                 </div>
             </div>
