@@ -478,7 +478,19 @@ const Main = (props) =>{
                 }
                 else if(charList.includes(hold1) && eq[hold3] !== hold5 ){
                     document.getElementById(`row${currentRow}col${pTemporary}`).className = "nearDig";
-                    document.getElementById(`key_${hold1}`).className = "col-2 key_within";
+                    if(hold1 === '+'){
+                        document.getElementById(`key_10`).className = "col-2 key_within";
+                    } else if(hold1 === '-'){
+                        document.getElementById(`key_11`).className = "col-2 key_within";
+                    } else if(hold1 === '^'){
+                        document.getElementById(`key_12`).className = "col-2 key_within";
+                    } else if(hold1 === '*'){
+                        document.getElementById(`key_14`).className = "col-2 key_within";
+                    } else if(hold1 === '/'){
+                        document.getElementById(`key_15`).className = "col-2 key_within";
+                    } else {
+                        document.getElementById(`key_${hold1}`).className = "col-2 key_within";
+                    }
                 } else {
                     document.getElementById(`row${currentRow}col${pTemporary}`).className = "notInEq"
                     for(let i = 0; i < 16; i++){
