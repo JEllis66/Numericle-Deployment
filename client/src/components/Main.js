@@ -416,118 +416,216 @@ const Main = (props) =>{
             for(let i = 1; i <= equationLength; i++){
                 document.getElementById(`row${currentRow}col${i}`).className = "correctDig";
             }
-            setCurrentRow(7);
-            gameWin();
+            setTimeout(function() { gameWin(); }, 200);
+            setTimeout(function() { setCurrentRow(7); }, 300);
             return;
 
         } else if(currentRow === 6){
-            setCurrentRow(7);
-            gameLose();
+            fill();
+            setTimeout(function() { gameLose(); }, 200);
+            setTimeout(function() { setCurrentRow(7); }, 300);
             return;
         } else {
-
+            fill();
             
-            for(let d = 0; d < finalIndexList.length; d++){
-                let tmpp = finalIndexList[d];
-                charList += eq[tmpp]
-            }
-
-            let guessInxSolutionNums = ""
-            for(let h = 0; h < finalIndexList.length; h++){
-                let temp = finalIndexList[h];
-                guessInxSolutionNums += eq[temp];
-            }
-
-            for(let a = 0; a < currentEq.length; a++){
-
-                let temporary = finalIndexList[a]
-                let pTemporary = parseInt(temporary) + 1
-                let hold1 = document.getElementById(`row${currentRow}col${pTemporary}`).innerHTML;
-                let hold2 = parseInt(charList.indexOf(hold1));
-                let hold3 = 0;
-                let hold4 = 0;
-                let hold5 = -1;
-                if(hold2 === -1){
-                    document.getElementById(`row${currentRow}col${pTemporary}`).className = "notInEq"
-                    for(let i = 0; i < 16; i++){
-                        let tmp = document.getElementById(`key_${i}`).innerHTML;
-                        let tmp2 = currentEq[a];
-                        if(tmp === tmp2 && (!guessInxSolutionNums.includes(tmp2))){
-                            document.getElementById(`key_${i}`).className = "col-2 key_pressed";
-                        }
-                    }
-                } else {
-                    hold3 = finalIndexList[hold2];
-                    hold4 = parseInt(hold3) + 1
-                    hold5 = document.getElementById(`row${currentRow}col${hold4}`).innerHTML
-                }
-            
-
-                if (hold1 === eq[temporary]){
-                    document.getElementById(`row${currentRow}col${pTemporary}`).className = "correctDig";
-                    if(hold1 === '+'){
-                        document.getElementById(`key_10`).className = "col-2 key_correct";
-                    } else if(hold1 === '-'){
-                        document.getElementById(`key_11`).className = "col-2 key_correct";
-                    } else if(hold1 === '^'){
-                        document.getElementById(`key_12`).className = "col-2 key_correct";
-                    } else if(hold1 === '*'){
-                        document.getElementById(`key_14`).className = "col-2 key_correct";
-                    } else if(hold1 === '/'){
-                        document.getElementById(`key_15`).className = "col-2 key_correct";
-                    } else {
-                        document.getElementById(`key_${hold1}`).className = "col-2 key_correct";
-                    }
-                } else if(hold1 === -1){
-                    document.getElementById(`row${currentRow}col${pTemporary}`).className = "notInEq"
-                    for(let i = 0; i < 16; i++){
-                        let tmp = document.getElementById(`key_${i}`).innerHTML;
-                        let tmp2 = currentEq[a];
-                        if(tmp === tmp2 && (!guessInxSolutionNums.includes(tmp2))){
-                            document.getElementById(`key_${i}`).className = "col-2 key_pressed";
-                        }
-                    }
-                }
-                else if(charList.includes(hold1) && eq[hold3] !== hold5 ){
-                    document.getElementById(`row${currentRow}col${pTemporary}`).className = "nearDig";
-                    if(hold1 === '+'){
-                        document.getElementById(`key_10`).className = "col-2 key_within";
-                    } else if(hold1 === '-'){
-                        document.getElementById(`key_11`).className = "col-2 key_within";
-                    } else if(hold1 === '^'){
-                        document.getElementById(`key_12`).className = "col-2 key_within";
-                    } else if(hold1 === '*'){
-                        document.getElementById(`key_14`).className = "col-2 key_within";
-                    } else if(hold1 === '/'){
-                        document.getElementById(`key_15`).className = "col-2 key_within";
-                    } else {
-                        document.getElementById(`key_${hold1}`).className = "col-2 key_within";
-                    }
-                } else {
-                    document.getElementById(`row${currentRow}col${pTemporary}`).className = "notInEq"
-                    for(let i = 0; i < 16; i++){
-                        let tmp = document.getElementById(`key_${i}`).innerHTML;
-                        let tmp2 = currentEq[a];
-                        if(tmp === tmp2 && (!guessInxSolutionNums.includes(tmp2))){
-                            document.getElementById(`key_${i}`).className = "col-2 key_pressed";
-                        }
-                    }
-                }
-            }
-
-            setCurrentEq("");
-            if(currentRow < 6){
-                setCurrentRow(currentRow+1);
-            }
-            setIndexListCounter(0);
-            return;
         }
 
     }
 
-    function gameWin(){
+    function fill(){
+        let charList = ""
+        let answer = (math.evaluate(finalEqValueList)).toString();
+        for(let d = 0; d < finalIndexList.length; d++){
+            let tmpp = finalIndexList[d];
+            charList += eq[tmpp]
+        }
 
-        alert("winner!!!");
+        let guessInxSolutionNums = ""
+        for(let h = 0; h < finalIndexList.length; h++){
+            let temp = finalIndexList[h];
+            guessInxSolutionNums += eq[temp];
+        }
+
+        for(let a = 0; a < currentEq.length; a++){
+
+            let temporary = finalIndexList[a]
+            let pTemporary = parseInt(temporary) + 1
+            let hold1 = document.getElementById(`row${currentRow}col${pTemporary}`).innerHTML;
+            let hold2 = parseInt(charList.indexOf(hold1));
+            let hold3 = 0;
+            let hold4 = 0;
+            let hold5 = -1;
+            if(hold2 === -1){
+                document.getElementById(`row${currentRow}col${pTemporary}`).className = "notInEq"
+                for(let i = 0; i < 16; i++){
+                    let tmp = document.getElementById(`key_${i}`).innerHTML;
+                    let tmp2 = currentEq[a];
+                    if(tmp === tmp2 && (!guessInxSolutionNums.includes(tmp2))){
+                        document.getElementById(`key_${i}`).className = "col-2 key_pressed";
+                    }
+                }
+            } else {
+                hold3 = finalIndexList[hold2];
+                hold4 = parseInt(hold3) + 1
+                hold5 = document.getElementById(`row${currentRow}col${hold4}`).innerHTML
+            }
+        
+
+            if (hold1 === eq[temporary]){
+                document.getElementById(`row${currentRow}col${pTemporary}`).className = "correctDig";
+                if(hold1 === '+'){
+                    document.getElementById(`key_10`).className = "col-2 key_correct";
+                } else if(hold1 === '-'){
+                    document.getElementById(`key_11`).className = "col-2 key_correct";
+                } else if(hold1 === '^'){
+                    document.getElementById(`key_12`).className = "col-2 key_correct";
+                } else if(hold1 === '*'){
+                    document.getElementById(`key_14`).className = "col-2 key_correct";
+                } else if(hold1 === '/'){
+                    document.getElementById(`key_15`).className = "col-2 key_correct";
+                } else {
+                    document.getElementById(`key_${hold1}`).className = "col-2 key_correct";
+                }
+            } else if(hold1 === -1){
+                document.getElementById(`row${currentRow}col${pTemporary}`).className = "notInEq"
+                for(let i = 0; i < 16; i++){
+                    let tmp = document.getElementById(`key_${i}`).innerHTML;
+                    let tmp2 = currentEq[a];
+                    if(tmp === tmp2 && (!guessInxSolutionNums.includes(tmp2))){
+                        document.getElementById(`key_${i}`).className = "col-2 key_pressed";
+                    }
+                }
+            }
+            else if(charList.includes(hold1) && eq[hold3] !== hold5 ){
+                document.getElementById(`row${currentRow}col${pTemporary}`).className = "nearDig";
+                if(hold1 === '+'){
+                    document.getElementById(`key_10`).className = "col-2 key_within";
+                } else if(hold1 === '-'){
+                    document.getElementById(`key_11`).className = "col-2 key_within";
+                } else if(hold1 === '^'){
+                    document.getElementById(`key_12`).className = "col-2 key_within";
+                } else if(hold1 === '*'){
+                    document.getElementById(`key_14`).className = "col-2 key_within";
+                } else if(hold1 === '/'){
+                    document.getElementById(`key_15`).className = "col-2 key_within";
+                } else {
+                    document.getElementById(`key_${hold1}`).className = "col-2 key_within";
+                }
+            } else {
+                document.getElementById(`row${currentRow}col${pTemporary}`).className = "notInEq"
+                for(let i = 0; i < 16; i++){
+                    let tmp = document.getElementById(`key_${i}`).innerHTML;
+                    let tmp2 = currentEq[a];
+                    if(tmp === tmp2 && (!guessInxSolutionNums.includes(tmp2))){
+                        document.getElementById(`key_${i}`).className = "col-2 key_pressed";
+                    }
+                }
+            }
+        }
+
+        setCurrentEq("");
+        if(currentRow < 6){
+            setCurrentRow(currentRow+1);
+        }
+        setIndexListCounter(0);
+        return;
+    }
+
+    function emojiGen(status, guess){
+        let row1 = "";
+        let row2 = "";
+        let row3 = "";
+        let row4 = "";
+        let row5 = "";
+        let row6 = "";
+
+        for(let a = 1; a < numberOfGuesses+1; a++){
+            for(let b = 1; b < equationLength+1; b++ ){
+                let temp = document.getElementById(`row${a}col${b}`).className;
+                if(a === 1 && a <= currentRow){
+                    if(temp === "notInEq"){
+                        row1 += "⬛";
+                    } else if (temp === "correctDig"){
+                        row1 += "🟩";
+                    } else if (temp === "nearDig"){
+                        row1 += "🟨"
+                    } else if (temp === "wrongDig"){
+                        row1 += "🟥"
+                    } else {
+                        console.log("error # 1")
+                    }
+                } else if(a === 2 && a <= currentRow){
+                    if(temp === "notInEq"){
+                        row2 += "⬛";
+                    } else if (temp === "correctDig"){
+                        row2 += "🟩";
+                    } else if (temp === "nearDig"){
+                        row2 += "🟨"
+                    } else if (temp === "wrongDig"){
+                        row2 += "🟥"
+                    } else {
+                        console.log("error # 2")
+                    }
+                } else if(a === 3 && a <= currentRow){
+                    if(temp === "notInEq"){
+                        row3 += "⬛";
+                    } else if (temp === "correctDig"){
+                        row3 += "🟩";
+                    } else if (temp === "nearDig"){
+                        row3 += "🟨"
+                    } else if (temp === "wrongDig"){
+                        row3 += "🟥"
+                    } else {
+                        console.log("error # 3")
+                    }
+                } else if(a === 4 && a <= currentRow){
+                    if(temp === "notInEq"){
+                        row4 += "⬛";
+                    } else if (temp === "correctDig"){
+                        row4 += "🟩";
+                    } else if (temp === "nearDig"){
+                        row4 += "🟨"
+                    } else if (temp === "wrongDig"){
+                        row4 += "🟥"
+                    } else {
+                        console.log("error # 4")
+                    }
+                }  else if(a === 5 && a <= currentRow){
+                    if(temp === "notInEq"){
+                        row5 += "⬛";
+                    } else if (temp === "correctDig"){
+                        row5 += "🟩";
+                    } else if (temp === "nearDig"){
+                        row5 += "🟨"
+                    } else if (temp === "wrongDig"){
+                        row5 += "🟥"
+                    }  else {
+                        console.log("error # 5")
+                    }
+                }  else if(a === 6 && a <= currentRow){
+                    if(temp === "notInEq"){
+                        row6 += "⬛";
+                    } else if (temp === "correctDig"){
+                        row6 += "🟩";
+                    } else if (temp === "nearDig"){
+                        row6 += "🟨"
+                    } else if (temp === "wrongDig"){
+                        row6 += "🟥"
+                    } else {
+                        console.log("error # 6")
+                    }
+                } else (
+                    console.log("error # 7")
+                )
+            }
+        }
+        
+        return (`${status}(${guess}/${numberOfGuesses}):` + '\n' + row1 + '\n' + row2 + '\n' + row3 + '\n' + row4 + '\n' + row5 + '\n' + row6  );
+    }
+
+    function gameWin(){
+        
+        alert(emojiGen("Win 😄 ", currentRow.toString()));
 
         let a = parseInt(finalIndexList[0]) + 1;
 
@@ -540,11 +638,15 @@ const Main = (props) =>{
     }
 
     function gameLose(){
+        alert(emojiGen("Loss 😔 ", 'X'))
+        setTimeout(function() { fillAnswer(); }, 200);
+    }
+
+    function fillAnswer(){
         for(let i = 0; i < finalIndexList.length; i++){
             let k = parseInt(finalIndexList[i]) + 1;
             let m = finalIndexList[i];
             let j = eq[m];
-            console.log("here: " + k, m, j);
             document.getElementById(`row${currentRow}col${k}`).innerHTML = j;
         }
         for(let r = 0; r < equationLength; r++){
@@ -557,7 +659,7 @@ const Main = (props) =>{
         document.getElementById(`ans${currentRow}spot2`).className = 'wrongDig';
         document.getElementById(`ans${currentRow}spot3`).innerHTML = solutionFin[2];
         document.getElementById(`ans${currentRow}spot3`).className = 'wrongDig';
-        alert("Loser!")
+        
     }
 
     useEffect(()=>{

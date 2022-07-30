@@ -69,8 +69,16 @@
   background-color: #ffc107;
 }
 
+.key_within:hover{
+  background-color: #fed14a;
+}
+
 .key_correct{
   background-color: #198754;
+}
+
+.key_correct:hover{
+  background-color: #23b16f;
 }
 
 .key_pressed:hover,.key_within,.key_correct{
