@@ -182,7 +182,7 @@ const EquationGeneration = (props) =>{
         
     }
 
-    let isTriggerd = true;
+    let isTriggerd = false;
 
     const startTrigger = () =>{
         setTimeout(function() {
