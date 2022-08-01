@@ -22,7 +22,7 @@ const EquationGeneration = (props) =>{
     let possibleOpIndexes = ""
     let revealTheseChars = [];
     let revealTheseOps = [];
-    let daysDB = 0;
+    let daysDBs = 0;
 
     function createEq(){
 
@@ -97,7 +97,7 @@ const EquationGeneration = (props) =>{
             postEq = testEq;
             postSol = dailySolution;
             var date = new Date();
-            date.setDate(date.getDate() + daysDB);
+            date.setDate(date.getDate() + daysDBs);
             console.log(date)
             postDate = date.toString().substring(4,15).replace(/\s+/g, '');
         }
@@ -188,8 +188,8 @@ const EquationGeneration = (props) =>{
         setTimeout(function() {
             if(!isTriggerd){
                 
-                trigger(daysDB);
-                daysDB++
+                trigger(daysDBs);
+                daysDBs++
                     
 
             }
