@@ -751,7 +751,7 @@ const Main = (props) =>{
                     <p className="mt-0 mb-0" id="post4">{postRow4}</p>
                     <p className="mt-0 mb-0" id="post5">{postRow5}</p>
                     <p className="mt-0 mb-0" id="post6">{postRow6}</p> 
-                    <p onClick={()=> setTimeout(function() { copyToClip(); }, 200)} className="text-primary mt-2"><span id="copyText">Copy?</span><img className="icons ml-3" id="icon6" src={copy} alt="copy.png" onClick={()=> setTimeout(function() { copyToClip(); }, 200) } onMouseEnter={e => (e.currentTarget.src = copy2)} onMouseLeave={e => (e.currentTarget.src = copy)}/></p>
+                    <p onClick={()=> setTimeout(function() { copyToClip(); }, 300)} className="text-primary mt-2"><span id="copyText">Copy?</span><img className="icons ml-3" id="icon6" src={copy} alt="copy.png" onClick={()=> setTimeout(function() { copyToClip(); }, 300) } onMouseEnter={e => (e.currentTarget.src = copy2)} onMouseLeave={e => (e.currentTarget.src = copy)}/></p>
                 </div>    
             </GameOver>
 
