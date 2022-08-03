@@ -187,3 +187,15 @@ li,ul{
   margin-bottom: 0px !important;
   margin-top: 0px !important;
 }
+
+#icon6{
+  width: 35px;
+}
+
+#postFrac{
+  font-size: 14pt;
+}
+
+#copyText:hover{
+  cursor: pointer;
+}

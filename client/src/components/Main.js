@@ -2,6 +2,9 @@ import React, {useEffect, useState} from "react";
 import axios from "axios";
 import EquationGeneration from './EquationGeneration';
 import {create, all} from 'mathjs';
+import copy from '../images/copy.png';
+import copy2 from '../images/copy_hover.png';
+import GameOver from "./GameOver";
 
 
 
@@ -38,7 +41,15 @@ const Main = (props) =>{
 
     const [currentSol, setCurrentSol] = useState("");
     const [currentEq, setCurrentEq] = useState("");
-    const [isEqEnd, setIsEqEnd] = useState(false);
+    const [postRow1, setPostRow1] = useState("");
+    const [postRow2, setPostRow2] = useState("");
+    const [postRow3, setPostRow3] = useState("");
+    const [postRow4, setPostRow4] = useState("");
+    const [postRow5, setPostRow5] = useState("");
+    const [postRow6, setPostRow6] = useState("");
+    const [postFrac, setPostFrac] = useState("");
+
+    const [gameOverPopup, setGameOverPopup] = useState(false);
 
     for(let i = 0; i < equationLength; i++){
         eqLength.push(i+1)
@@ -47,7 +58,6 @@ const Main = (props) =>{
     for(let i = 0; i < numberOfGuesses; i++){
         numGuesses.push(i+1)
     }
-
 
     function isValidToEval(){
         let opError = false;
@@ -619,13 +629,19 @@ const Main = (props) =>{
                 )
             }
         }
-        
-        return (`${status}(${guess}/${numberOfGuesses}):` + '\n' + row1 + '\n' + row2 + '\n' + row3 + '\n' + row4 + '\n' + row5 + '\n' + row6  );
+
+        setPostFrac(`${status}(${guess}/${numberOfGuesses}):`)
+        setPostRow1(row1); 
+        setPostRow2(row2); 
+        setPostRow3(row3); 
+        setPostRow4(row4); 
+        setPostRow5(row5); 
+        setPostRow6(row6); 
     }
 
     function gameWin(){
-        
-        alert(emojiGen("Win 😄 ", currentRow.toString()));
+
+        emojiGen("Win 😄 ", currentRow.toString());
 
         let a = parseInt(finalIndexList[0]) + 1;
 
@@ -635,10 +651,13 @@ const Main = (props) =>{
             }
         }
 
+        setGameOverPopup(true);
+
     }
 
     function gameLose(){
-        alert(emojiGen("Loss 😔 ", 'X'))
+        emojiGen("Loss 😔 ", 'X');
+        setGameOverPopup(true);
         setTimeout(function() { fillAnswer(); }, 200);
     }
 
@@ -660,6 +679,11 @@ const Main = (props) =>{
         document.getElementById(`ans${currentRow}spot3`).innerHTML = solutionFin[2];
         document.getElementById(`ans${currentRow}spot3`).className = 'wrongDig';
         
+    }
+
+    function copyToClip() {
+        navigator.clipboard.writeText(postFrac + '\n' + postRow1 + '\n' + postRow2 + '\n' + postRow3 + '\n' + postRow4 + '\n' + postRow5 + '\n' + postRow6);
+        document.getElementById('copyText').innerHTML = "Copied!";
     }
 
     useEffect(()=>{
@@ -713,6 +737,23 @@ const Main = (props) =>{
             }
 
             <hr className="mt-3 mb-3"/>
+
+            <GameOver trigger={gameOverPopup} setTrigger={setGameOverPopup}>
+                <div className="d-flex justify-content-between">
+                    <h2 className="text-secondary"> Game Over:</h2>
+                    <button className="closePopUp" onClick={()=> {setGameOverPopup(!gameOverPopup)}}>X</button>
+                </div>
+                <div className="row d-flex justify-content-start mt-5">
+                    <p className="mt-0 mb-2" id="postFrac">{postFrac}</p>
+                    <p className="mt-0 mb-0" id="post1">{postRow1}</p>
+                    <p className="mt-0 mb-0" id="post2">{postRow2}</p>
+                    <p className="mt-0 mb-0" id="post3">{postRow3}</p>
+                    <p className="mt-0 mb-0" id="post4">{postRow4}</p>
+                    <p className="mt-0 mb-0" id="post5">{postRow5}</p>
+                    <p className="mt-0 mb-0" id="post6">{postRow6}</p> 
+                    <p onClick={()=> setTimeout(function() { copyToClip(); }, 200)} className="text-primary mt-2"><span id="copyText">Copy?</span><img className="icons ml-3" id="icon6" src={copy} alt="copy.png" onClick={()=> setTimeout(function() { copyToClip(); }, 200) } onMouseEnter={e => (e.currentTarget.src = copy2)} onMouseLeave={e => (e.currentTarget.src = copy)}/></p>
+                </div>    
+            </GameOver>
 
             <div id="keypad_interface" className="">
                 <div id="row7" className="d-flex row justify-content-center">

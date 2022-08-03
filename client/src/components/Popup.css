@@ -1,22 +1,23 @@
 
 .popup{
-    position: fixed;
-    width: 0%;
-    height: 0%;
+    position: absolute;
+    left: 0%;
+    min-width: 50%;
+    height: 60%;
+    margin: 0 auto;
     z-index: 3;
     top: 150px;
 }
 
 .popup-inner {
-    width: 80vw;
-    height: 70vh;
-    position: absolute;
+    width: 60%;
+    min-width: 100%;
+    min-height: fit-content;
+    position: relative;
     padding: 30px;
-    left: 5%;
     z-index: 10;
     background-color: white;
-    border-radius: 1em;
-    box-shadow: rgba(0,0,0,0.7) 30px 30px 300px;
+    box-shadow: rgba(0,0,0,0.8) 30px 30px 300px;
 }
 
 .popup-inner .close-btn{
