@@ -682,13 +682,32 @@ const Main = (props) =>{
     }
 
     function copyToClip() {
+
         let t0 = document.getElementById(`postFrac`).innerHTML;
         let t1 = document.getElementById(`post1`).innerHTML;
-        let t2 = document.getElementById(`post2`).innerHTML;
-        let t3 = document.getElementById(`post3`).innerHTML;
-        let t4 = document.getElementById(`post4`).innerHTML;
-        let t5 = document.getElementById(`post5`).innerHTML;
-        let t6 = document.getElementById("post6").innerHTML;
+        let t2 = "";
+        let t3 = "";
+        let t4 = "";
+        let t5 = "";
+        let t6 = "";
+
+        
+        if(currentRow >= 2){
+            t2 = document.getElementById(`post2`).innerHTML;
+        }
+        if(currentRow >= 3){
+            t3 = document.getElementById(`post3`).innerHTML;
+        }
+        if(currentRow >= 4){
+            t4 = document.getElementById(`post4`).innerHTML;
+        }
+        if(currentRow >= 5){
+            t5 = document.getElementById(`post5`).innerHTML;
+        }
+        if(currentRow >= 6){
+            t6 = document.getElementById(`post6`).innerHTML;
+        }
+        
 
         navigator.clipboard.writeText(t0 + '\n' + t1 + '\n' + t2 + '\n' + t3 + '\n' + t4 + '\n' + t5 + '\n' + t6);
         document.getElementById('copyText').innerHTML = "Copied!";
