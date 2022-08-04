@@ -625,9 +625,19 @@ const Main = (props) =>{
                     } else {
                         console.log("error # 6")
                     }
-                } else (
-                    console.log("error # 7")
-                )
+                } else if (a === 2){
+                    row2 = " ";
+                } else if (a === 3){
+                    row3 = " ";
+                } else if (a === 4){
+                    row4 = " ";
+                } else if (a === 5){
+                    row5 = " ";
+                } else if (a === 6 || a === 7){
+                    row6 = " ";
+                }
+                    
+                
             }
         }
 
@@ -706,7 +716,7 @@ const Main = (props) =>{
             t5 = postRow6;
         }
         if(currentRow >= 6){
-            t6 = postRow6
+            t6 = postRow6;
         }
         
 
