@@ -713,7 +713,7 @@ const Main = (props) =>{
             t4 = postRow4;
         }
         if(currentRow >= 5){
-            t5 = postRow6;
+            t5 = postRow5;
         }
         if(currentRow >= 6){
             t6 = postRow6;
