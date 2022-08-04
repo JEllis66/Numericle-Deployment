@@ -694,13 +694,13 @@ const Main = (props) =>{
 
     function copyToClip() {
 
-        t0 = postFrac;
-        t1 = postRow1;
-        t2 = postRow2;
-        t3 = postRow3;
-        t4 = postRow4;
-        t5 = postRow5;
-        t6 = postRow6;
+        let t0 = postFrac;
+        let t1 = postRow1;
+        let t2 = postRow2;
+        let t3 = postRow3;
+        let t4 = postRow4;
+        let t5 = postRow5;
+        let t6 = postRow6;
 
         navigator.clipboard.writeText(t0 + '\n' + t1 + '\n' + t2 + '\n' + t3 + '\n' + t4 + '\n' + t5 + '\n' + t6);
         document.getElementById('copyText').innerHTML = "Copied!";
