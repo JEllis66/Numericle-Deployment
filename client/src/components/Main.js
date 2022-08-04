@@ -548,8 +548,9 @@ const Main = (props) =>{
         let row4 = "";
         let row5 = "";
         let row6 = "";
+        let n = numberOfGuesses+1;
 
-        for(let a = 1; a < numberOfGuesses+1; a++){
+        for(let a = 1; a < n; a++){
             for(let b = 1; b < equationLength+1; b++ ){
                 let temp = document.getElementById(`row${a}col${b}`).className;
                 if(a === 1 && a <= currentRow){
@@ -612,7 +613,7 @@ const Main = (props) =>{
                     }  else {
                         console.log("error # 5")
                     }
-                }  else if(a === 6 && a <= currentRow){
+                }  else if(a === 6 && a <= currentRow+1){
                     if(temp === "notInEq"){
                         row6 += "⬛";
                     } else if (temp === "correctDig"){
