@@ -693,19 +693,19 @@ const Main = (props) =>{
 
         
         if(currentRow >= 2){
-            t2 = document.getElementById(`post2`).innerHTML;
+            t2 = postRow2;
         }
         if(currentRow >= 3){
-            t3 = document.getElementById(`post3`).innerHTML;
+            t3 = postRow3;
         }
         if(currentRow >= 4){
-            t4 = document.getElementById(`post4`).innerHTML;
+            t4 = postRow4;
         }
         if(currentRow >= 5){
-            t5 = document.getElementById(`post5`).innerHTML;
+            t5 = postRow6;
         }
         if(currentRow >= 6){
-            t6 = document.getElementById(`post6`).innerHTML;
+            t6 = postRow6
         }
         
 
