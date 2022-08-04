@@ -694,35 +694,125 @@ const Main = (props) =>{
 
     function copyToClip() {
 
-        let t0 = document.getElementById(`postFrac`).innerHTML;
-        let t1 = document.getElementById(`post1`).innerHTML;
-        let t2 = "";
-        let t3 = "";
-        let t4 = "";
-        let t5 = "";
-        let t6 = "";
+        console.log("pfrac: " + postFrac);
+        console.log("prow1 : " + postRow1)
+        console.log("prow1 : " + postRow2)
+        console.log("prow1 : " + postRow3)
+        console.log("prow1 : " + postRow4)
+        console.log("prow1 : " + postRow5)
+        console.log("prow1 : " + postRow6)
+
+        let n = numberOfGuesses+1;
+        let row1 = "";
+        let row2 = "";
+        let row3 = "";
+        let row4 = "";
+        let row5 = "";
+        let row6 = "";
+
+        for(let a = 1; a < n; a++){
+            for(let b = 1; b < equationLength+1; b++ ){
+                let temp = document.getElementById(`row${a}col${b}`).className;
+                if(a === 1 && a <= currentRow){
+                    if(temp === "notInEq"){
+                        row1 += "⬛";
+                    } else if (temp === "correctDig"){
+                        row1 += "🟩";
+                    } else if (temp === "nearDig"){
+                        row1 += "🟨"
+                    } else if (temp === "wrongDig"){
+                        row1 += "🟥"
+                    } else {
+                        console.log("error # 1")
+                    }
+                } else if(a === 2 && a <= currentRow){
+                    if(temp === "notInEq"){
+                        row2 += "⬛";
+                    } else if (temp === "correctDig"){
+                        row2 += "🟩";
+                    } else if (temp === "nearDig"){
+                        row2 += "🟨"
+                    } else if (temp === "wrongDig"){
+                        row2 += "🟥"
+                    } else {
+                        console.log("error # 2")
+                    }
+                } else if(a === 3 && a <= currentRow){
+                    if(temp === "notInEq"){
+                        row3 += "⬛";
+                    } else if (temp === "correctDig"){
+                        row3 += "🟩";
+                    } else if (temp === "nearDig"){
+                        row3 += "🟨"
+                    } else if (temp === "wrongDig"){
+                        row3 += "🟥"
+                    } else {
+                        console.log("error # 3")
+                    }
+                } else if(a === 4 && a <= currentRow){
+                    if(temp === "notInEq"){
+                        row4 += "⬛";
+                    } else if (temp === "correctDig"){
+                        row4 += "🟩";
+                    } else if (temp === "nearDig"){
+                        row4 += "🟨"
+                    } else if (temp === "wrongDig"){
+                        row4 += "🟥"
+                    } else {
+                        console.log("error # 4")
+                    }
+                }  else if(a === 5 && a <= currentRow){
+                    if(temp === "notInEq"){
+                        row5 += "⬛";
+                    } else if (temp === "correctDig"){
+                        row5 += "🟩";
+                    } else if (temp === "nearDig"){
+                        row5 += "🟨"
+                    } else if (temp === "wrongDig"){
+                        row5 += "🟥"
+                    }  else {
+                        console.log("error # 5")
+                    }
+                }  else if(a === 6 && a <= currentRow+1){
+                    if(temp === "notInEq"){
+                        row6 += "⬛";
+                    } else if (temp === "correctDig"){
+                        row6 += "🟩";
+                    } else if (temp === "nearDig"){
+                        row6 += "🟨"
+                    } else if (temp === "wrongDig"){
+                        row6 += "🟥"
+                    } else {
+                        console.log("error # 6")
+                    }
+                } else if (a === 2){
+                    row2 = " ";
+                } else if (a === 3){
+                    row3 = " ";
+                } else if (a === 4){
+                    row4 = " ";
+                } else if (a === 5){
+                    row5 = " ";
+                } else if (a === 6 || a === 7){
+                    row6 = " ";
+                }
+            }   
+        }
+            
+
+        console.log(row1); 
+        console.log(row2); 
+        console.log(row3); 
+        console.log(row4); 
+        console.log(row5); 
+        console.log(row6); 
 
         
-        if(currentRow >= 2){
-            t2 = postRow2;
-        }
-        if(currentRow >= 3){
-            t3 = postRow3;
-        }
-        if(currentRow >= 4){
-            t4 = postRow4;
-        }
-        if(currentRow >= 5){
-            t5 = postRow5;
-        }
-        if(currentRow >= 6){
-            t6 = postRow6;
-        }
-        
 
-        navigator.clipboard.writeText(t0 + '\n' + t1 + '\n' + t2 + '\n' + t3 + '\n' + t4 + '\n' + t5 + '\n' + t6);
+        // navigator.clipboard.writeText(t0 + '\n' + t1 + '\n' + t2 + '\n' + t3 + '\n' + t4 + '\n' + t5 + '\n' + t6);
         document.getElementById('copyText').innerHTML = "Copied!";
-    }
+    
+}
 
     useEffect(()=>{
         var today = new Date();
