@@ -688,7 +688,7 @@ const Main = (props) =>{
         let t3 = document.getElementById(`post3`).innerHTML;
         let t4 = document.getElementById(`post4`).innerHTML;
         let t5 = document.getElementById(`post5`).innerHTML;
-        let t6 = document.getElementById(`post6`).innerHTML;
+        let t6 = document.getElementById("post6").innerHTML;
 
         navigator.clipboard.writeText(t0 + '\n' + t1 + '\n' + t2 + '\n' + t3 + '\n' + t4 + '\n' + t5 + '\n' + t6);
         document.getElementById('copyText').innerHTML = "Copied!";
@@ -759,7 +759,7 @@ const Main = (props) =>{
                     <p className="mt-0 mb-0" id="post4">{postRow4}</p>
                     <p className="mt-0 mb-0" id="post5">{postRow5}</p>
                     <p className="mt-0 mb-0" id="post6">{postRow6}</p> 
-                    <p onClick={()=> setTimeout(function() { copyToClip(); }, 300)} className="text-primary mt-2"><span id="copyText">Copy?</span><img className="icons ml-3" id="icon6" src={copy} alt="copy.png" onClick={()=> setTimeout(function() { copyToClip(); }, 300) } onMouseEnter={e => (e.currentTarget.src = copy2)} onMouseLeave={e => (e.currentTarget.src = copy)}/></p>
+                    <p onClick={()=> setTimeout(function() { copyToClip(); }, 500)} className="text-primary mt-2"><span id="copyText">Copy?</span><img className="icons ml-3" id="icon6" src={copy} alt="copy.png" onClick={()=> setTimeout(function() { copyToClip(); }, 500) } onMouseEnter={e => (e.currentTarget.src = copy2)} onMouseLeave={e => (e.currentTarget.src = copy)}/></p>
                 </div>    
             </GameOver>
 
