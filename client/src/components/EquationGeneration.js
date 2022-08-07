@@ -209,9 +209,9 @@ const EquationGeneration = (props) =>{
     }, [solutionFin]) 
 
     return (
-        <div className="container mt-3 mb-2">
-            <div className="d-flex justify-content-center align-middle mb-2">
-                <h2 id="todaysSolution" className='text-success pt-2'> Today's Solution</h2>
+        <div className="container">
+            <div className="d-flex justify-content-center align-">
+                <h2 id="todaysSolution" className='text-success pt-1'> Today's Solution</h2>
                 <p className="equals">=</p>
                 <p className="solutionGridAns bg-success text-white" id={`todayAnsSpot1`}>{solutionFin[0]}</p>
                 <p className="solutionGridAns bg-success text-white" id={`todayAnsSpot2`}>{solutionFin[1]}</p>

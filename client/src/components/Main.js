@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
+import clipboard from 'clipboardy';
 import EquationGeneration from './EquationGeneration';
 import {create, all} from 'mathjs';
 import copy from '../images/copy.png';
@@ -10,8 +11,10 @@ import GameOver from "./GameOver";
 
 const Main = (props) =>{
 
-    const config = { }
-    const math = create(all, config)
+    const config = { };
+    const math = create(all, config);
+
+    const clipboardy = require('clipboardy');
 
     const equationLength = 10;
     const numberOfGuesses = 6;
@@ -48,6 +51,7 @@ const Main = (props) =>{
     const [postRow5, setPostRow5] = useState("");
     const [postRow6, setPostRow6] = useState("");
     const [postFrac, setPostFrac] = useState("");
+    const [winStatus, setWinStatus] = useState("");
 
     const [gameOverPopup, setGameOverPopup] = useState(false);
 
@@ -613,7 +617,7 @@ const Main = (props) =>{
                     }  else {
                         console.log("error # 5")
                     }
-                }  else if(a === 6 && a <= currentRow+1){
+                }  else if(a === 6 && a <= currentRow){
                     if(temp === "notInEq"){
                         row6 += "⬛";
                     } else if (temp === "correctDig"){
@@ -652,7 +656,8 @@ const Main = (props) =>{
 
     function gameWin(){
 
-        emojiGen("Win 😄 ", currentRow.toString());
+        setWinStatus("W");
+        emojiGen("Numericle Win! 😄 ", currentRow.toString());
 
         let a = parseInt(finalIndexList[0]) + 1;
 
@@ -667,7 +672,8 @@ const Main = (props) =>{
     }
 
     function gameLose(){
-        emojiGen("Loss 😔 ", 'X');
+        setWinStatus("L");
+        emojiGen("Numericle Loss 😔 ", 'X');
         setGameOverPopup(true);
         setTimeout(function() { fillAnswer(); }, 200);
     }
@@ -702,7 +708,7 @@ const Main = (props) =>{
         let t5 = postRow5;
         let t6 = postRow6;
 
-        navigator.clipboard.writeText(t0 + '\n' + t1 + '\n' + t2 + '\n' + t3 + '\n' + t4 + '\n' + t5 + '\n' + t6);
+        clipboard.writeSync(t0 + '\n' + t1 + '\n' + t2 + '\n' + t3 + '\n' + t4 + '\n' + t5 + '\n' + t6);
         document.getElementById('copyText').innerHTML = "Copied!";
     
 }
@@ -737,7 +743,7 @@ const Main = (props) =>{
 
     return (
         
-        <div className="container mt-3 mb-3">
+        <div className="container">
             
             <EquationGeneration eq={eq} solutionFin={solutionFin} setEq={setEq} setSolutionFin={setSolutionFin}/>
             
@@ -757,7 +763,6 @@ const Main = (props) =>{
                 ))
             }
 
-            <hr className="mt-3 mb-3"/>
 
             <GameOver trigger={gameOverPopup} setTrigger={setGameOverPopup}>
                 <div className="d-flex justify-content-between">
@@ -765,7 +770,7 @@ const Main = (props) =>{
                     <button className="closePopUp" onClick={()=> {setGameOverPopup(!gameOverPopup)}}>X</button>
                 </div>
                 <div className="row d-flex justify-content-start mt-5">
-                    <p className="mt-0 mb-2" id="postFrac">{postFrac}</p>
+                    <p className="mt-0 mb-2" id={`postFrac${winStatus}`}>{postFrac}</p>
                     <p className="mt-0 mb-0" id="post1">{postRow1}</p>
                     <p className="mt-0 mb-0" id="post2">{postRow2}</p>
                     <p className="mt-0 mb-0" id="post3">{postRow3}</p>
@@ -776,7 +781,7 @@ const Main = (props) =>{
                 </div>    
             </GameOver>
 
-            <div id="keypad_interface" className="">
+            <div id="keypad_interface" className="mt-3">
                 <div id="row7" className="d-flex row justify-content-center">
                     <p onClick={()=>keyPress(1)} className="col-2 key_unselected" id="key_1">1</p>
                     <p onClick={()=>keyPress(2)} className="col-2 key_unselected" id="key_2">2</p>
@@ -799,7 +804,6 @@ const Main = (props) =>{
                     <p onClick={()=>keyPress(0)}  className="col-2 key_unselected" id="key_0">0</p>
                     <p onClick={()=>keyPress("*")}  className="col-2 key_unselected" id="key_14">*</p>
                     <p onClick={()=>keyPress("/")} className="col-2 key_unselected" id="key_15">/</p>
-                    
                 </div>
             </div>
 

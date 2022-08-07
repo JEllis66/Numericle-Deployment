@@ -39,7 +39,7 @@ const Navigation = () =>{
                     </div>
                     <ul className="row d-flex text-start mt-3 pb-4">
                         <li className="mt-2 mb-2"><Link className="text-decoration-none" to={"/home"}>Home</Link></li>
-                        {/* <li onClick={()=> {setMenuPopup(false); setStatsPopup(false); setHelpPopup(false); setSettingsPopup(false); setNewLoginPopup(false); setUserLoginPopup(!userLoginPopup)}} className="mb-2"><a className="text-decoration-none" href="#">User Login</a></li> */}
+                        <li onClick={()=> {setMenuPopup(false); setStatsPopup(false); setHelpPopup(false); setSettingsPopup(false); setNewLoginPopup(false); setUserLoginPopup(!userLoginPopup)}} className="mb-2"><a className="text-decoration-none" href="#">User Login</a></li>
                         <li className="mb-2"><Link className="text-decoration-none" to={"/discussion"}>Daily Discussion</Link></li>
                         <li className="mb-2"><a className="text-decoration-none" href="https://github.com/JEllis66/Numericle-Depolyment">Numericle's GitHub Repo</a></li>
                     </ul>    
@@ -110,25 +110,25 @@ const Navigation = () =>{
                     </div>
                     <div className="row d-flex text-start mt-4">
                         <form className="form">
-                            <div className="mb-1 d-flex justify-content-around">
+                            <div className="mb-1 d-flex row justify-content-around">
                                 <div></div>
-                                <label className="form-label">
+                                <label className="form-label col-6">
                                     Email Address:
                                     <input type="email" className="form-control"/>
                                 </label>
-                                <label className="form-label">
+                                <label className="form-label col-6">
                                     Username:
                                     <input type="text" className="form-control"/>
                                 </label>
                                 <div></div>
                             </div>
-                            <div className="mb-3 d-flex justify-content-around">
+                            <div className="mb-3 d-flex row justify-content-around">
                             <div></div>
-                                <label className="form-label">
+                                <label className="form-label col-6">
                                     Password:
                                     <input type="password" className="form-control"/>
                                 </label>
-                                <label className="form-label">
+                                <label className="form-label col-6">
                                     Confirm Password:
                                     <input type="password" className="form-control"/>
                                 </label>
@@ -141,16 +141,16 @@ const Navigation = () =>{
                     </div>       
                 </NewUser>
             </div>
-            <div className="col-3 ml-4">
-                <img className="icons mt-3" id="icon1" src={menu1} alt="menu.png" onClick={()=> {setStatsPopup(false); setHelpPopup(false); setSettingsPopup(false); setUserLoginPopup(false); setNewLoginPopup(false); setMenuPopup(!menuPopup)}} onMouseEnter={e => (e.currentTarget.src = menu2)} onMouseLeave={e => (e.currentTarget.src = menu1)}/>
-                <img className="icons mt-3" id="icon2" src={stats1} alt="stats.png" onClick={()=> {setMenuPopup(false); setHelpPopup(false); setSettingsPopup(false); setUserLoginPopup(false); setNewLoginPopup(false); setStatsPopup(!statsPopup)}} onMouseEnter={e => (e.currentTarget.src = stats2)} onMouseLeave={e => (e.currentTarget.src = stats1)}/>
+            <div className="col-3">
+                <img className="icons mt-2" id="icon1" src={menu1} alt="menu.png" onClick={()=> {setStatsPopup(false); setHelpPopup(false); setSettingsPopup(false); setUserLoginPopup(false); setNewLoginPopup(false); setMenuPopup(!menuPopup)}} onMouseEnter={e => (e.currentTarget.src = menu2)} onMouseLeave={e => (e.currentTarget.src = menu1)}/>
+                <img className="icons mt-2" id="icon2" src={stats1} alt="stats.png" onClick={()=> {setMenuPopup(false); setHelpPopup(false); setSettingsPopup(false); setUserLoginPopup(false); setNewLoginPopup(false); setStatsPopup(!statsPopup)}} onMouseEnter={e => (e.currentTarget.src = stats2)} onMouseLeave={e => (e.currentTarget.src = stats1)}/>
             </div>
-            <h1 className="text-primary pt-2 col-6 mt-2">
+            <h1 className="text-primary pt-2 col-6 mt-0">
                 <Link className='text-decoration-none' to={"/"}><p><span><img className="icons mb-2" id="logoTop" src={logo} alt="numericleLogo.png"/></span>umericle</p></Link>
             </h1>
-            <div className="col-3">
-                <img className="icons mt-3" id="icon3" src={help1} alt="help.png" onClick={()=> {setMenuPopup(false); setStatsPopup(false); setSettingsPopup(false); setUserLoginPopup(false); setNewLoginPopup(false); setHelpPopup(!helpPopup)}} onMouseEnter={e => (e.currentTarget.src = help2)} onMouseLeave={e => (e.currentTarget.src = help1)}/>
-                <img className="icons mt-3" id="icon4" src={settings1} alt="settings.png" onClick={()=> {setMenuPopup(false); setStatsPopup(false); setHelpPopup(false); setUserLoginPopup(false); setNewLoginPopup(false); setSettingsPopup(!settingsPopup)}} onMouseEnter={e => (e.currentTarget.src = settings2)} onMouseLeave={e => (e.currentTarget.src = settings1)}/>
+            <div className="col-3" id="rightNav">
+                <img className="icons mt-2" id="icon3" src={help1} alt="help.png" onClick={()=> {setMenuPopup(false); setStatsPopup(false); setSettingsPopup(false); setUserLoginPopup(false); setNewLoginPopup(false); setHelpPopup(!helpPopup)}} onMouseEnter={e => (e.currentTarget.src = help2)} onMouseLeave={e => (e.currentTarget.src = help1)}/>
+                <img className="icons mt-2" id="icon4" src={settings1} alt="settings.png" onClick={()=> {setMenuPopup(false); setStatsPopup(false); setHelpPopup(false); setUserLoginPopup(false); setNewLoginPopup(false); setSettingsPopup(!settingsPopup)}} onMouseEnter={e => (e.currentTarget.src = settings2)} onMouseLeave={e => (e.currentTarget.src = settings1)}/>
             </div>
         </div>
     )
