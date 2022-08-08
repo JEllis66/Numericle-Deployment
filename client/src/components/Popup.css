@@ -2,9 +2,9 @@
 .popup{
     position: absolute;
     left: 0%;
-    min-width: 50vw;
+    min-width: 90vw;
     height: fit-content;
-    margin: 0 auto;
+    margin: auto;
     z-index: 3;
     top: 150px;
 }
