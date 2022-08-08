@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import clipboard from 'clipboardy';
 import EquationGeneration from './EquationGeneration';
 import {create, all} from 'mathjs';
 import copy from '../images/copy.png';
@@ -708,7 +707,6 @@ const Main = (props) =>{
         let t5 = postRow5;
         let t6 = postRow6;
 
-        clipboard.writeSync(t0 + '\n' + t1 + '\n' + t2 + '\n' + t3 + '\n' + t4 + '\n' + t5 + '\n' + t6);
         document.getElementById('copyText').innerHTML = "Copied!";
     
 }
