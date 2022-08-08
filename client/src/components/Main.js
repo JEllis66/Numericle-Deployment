@@ -12,6 +12,7 @@ const Main = (props) =>{
 
     const config = { };
     const math = create(all, config);
+
     const equationLength = 10;
     const numberOfGuesses = 6;
     const numOfOpsToReveal = 2;
@@ -738,7 +739,7 @@ const Main = (props) =>{
 
     return (
         
-        <div className="container">
+        <div>
             
             <EquationGeneration eq={eq} solutionFin={solutionFin} setEq={setEq} setSolutionFin={setSolutionFin}/>
             
@@ -776,8 +777,8 @@ const Main = (props) =>{
                 </div>    
             </GameOver>
 
-            <div id="keypad_interface" className="mt-3">
-                <div id="row7" className="d-flex justify-content-center">
+            <div id="keypad_interface" className="mt-3 mx-3">
+                <div id="row7" className="d-flex row justify-content-center">
                     <p onClick={()=>keyPress(1)} className="col-2 key_unselected" id="key_1">1</p>
                     <p onClick={()=>keyPress(2)} className="col-2 key_unselected" id="key_2">2</p>
                     <p onClick={()=>keyPress(3)} className="col-2 key_unselected" id="key_3">3</p>
@@ -785,14 +786,14 @@ const Main = (props) =>{
                     <p onClick={()=>keyPress("-")} className="col-2 key_unselected" id="key_11">-</p>
                     <p onClick={()=>delPress()} className="col-2 key_del" id="key_delete">Del</p>
                 </div>
-                <div id="row8" className="d-flex justify-content-center">
+                <div id="row8" className="d-flex row justify-content-center">
                     <p onClick={()=>keyPress(4)}  className="col-2 key_unselected" id="key_4">4</p>
                     <p onClick={()=>keyPress(5)}  className="col-2 key_unselected" id="key_5">5</p>
                     <p onClick={()=>keyPress(6)}  className="col-2 key_unselected" id="key_6">6</p>
                     <p onClick={()=>keyPress("^")} className="col-2 key_unselected" id="key_12">^</p>
                     <p onClick={()=>enterPress()} className="col-4 key_enter" id="key_13"> Enter </p>
                 </div>
-                <div id="row9" className="d-flex justify-content-center">
+                <div id="row9" className="d-flex row justify-content-center">
                     <p onClick={()=>keyPress(7)}  className="col-2 key_unselected" id="key_7">7</p>
                     <p onClick={()=>keyPress(8)}  className="col-2 key_unselected" id="key_8">8</p>
                     <p onClick={()=>keyPress(9)}  className="col-2 key_unselected" id="key_9">9</p>
