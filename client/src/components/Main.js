@@ -12,9 +12,6 @@ const Main = (props) =>{
 
     const config = { };
     const math = create(all, config);
-
-    const clipboardy = require('clipboardy');
-
     const equationLength = 10;
     const numberOfGuesses = 6;
     const numOfOpsToReveal = 2;
