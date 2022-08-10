@@ -197,7 +197,7 @@ const EquationGeneration = (props) =>{
     }
     
 
-    const timer = 86400000;
+    const timer = 864000;
 
     useEffect(() => {
         const interval = setInterval(() => {

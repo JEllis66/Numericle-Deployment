@@ -747,7 +747,7 @@ const Main = (props) =>{
                 numGuesses.map((row,index)=>(
                     <div key={index} className="d-flex justify-content-evenly">
                         {eqLength.map((col,index)=>(
-                            <div key={index}>
+                            <div className="" key={index}>
                                 <p className="guessGrid" id={`row${row}col${col}`}></p>
                             </div>
                         ))}
