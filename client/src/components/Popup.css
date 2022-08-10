@@ -2,7 +2,7 @@
 .popup{
     position: absolute;
     left: 0%;
-    min-width: 90vw;
+    min-width: 100vw;
     height: fit-content;
     margin: auto;
     z-index: 3;
@@ -10,7 +10,7 @@
 }
 
 .popup-inner {
-    width: 60%;
+    width: 100vw;
     min-width:98vw;
     min-height: fit-content;
     position: relative;

@@ -195,9 +195,14 @@ const EquationGeneration = (props) =>{
             }
         }, 1000)
     }
+
+    useEffect(() =>{
+        trigger(0);
+        daysDBs++
+    }, [])
     
 
-    const timer = 864000;
+    const timer = 10000;
 
     useEffect(() => {
         const interval = setInterval(() => {
