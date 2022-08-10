@@ -128,8 +128,8 @@
 }
 
 .guessGrid,.guessGridAns, .currentBlock, .equals, .solutionGridAns, .correctDig, .nearDig, .wrongDig, .notInEq{
-  width: 7vw;
-  min-width: 7vw;
+  width: 6vw;
+  min-width: 6vw;
   margin-left: 2px;
   margin-right: 2px;
   height: 50px;
@@ -217,11 +217,11 @@ li,ul{
 }
 
 #row8{
-  transform: translateY(-15px);
+  transform: translateY(-16px);
 }
 
 #row9{
-  transform: translateY(-30px);
+  transform: translateY(-32px);
 }
 
 #topHR{

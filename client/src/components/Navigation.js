@@ -68,14 +68,14 @@ const Navigation = () =>{
                         <button className="closePopUp" onClick={()=> {setMenuPopup(false); setStatsPopup(false); setHelpPopup(false); setUserLoginPopup(false); setNewLoginPopup(false); setSettingsPopup(!settingsPopup)}}>X</button>
                     </div>
                     <p className="mt-4" >Settings will go here...</p>
-                    <label className="d-flex text-start mt-4 mb-2">
+                    {/* <label className="d-flex text-start mt-4 mb-2">
                         <span>Dark Mode</span>
                         <input type="checkbox"/>
                     </label>
                     <label className="d-flex text-start mt-2 mb-2">
                         <span className="mr-3">Hard Mode</span>
                         <input className="mr-3" type="checkbox"/>
-                    </label>    
+                    </label>     */}
                 </Settings>
                 <UserLogin trigger={userLoginPopup} setTrigger={setUserLoginPopup}>
                     <div className="d-flex justify-content-between">
