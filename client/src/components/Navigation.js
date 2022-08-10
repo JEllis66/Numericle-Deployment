@@ -141,14 +141,14 @@ const Navigation = () =>{
                     </div>       
                 </NewUser>
             </div>
-            <div className="col-3">
-                <img className="icons mt-2" id="icon1" src={menu1} alt="menu.png" onClick={()=> {setStatsPopup(false); setHelpPopup(false); setSettingsPopup(false); setUserLoginPopup(false); setNewLoginPopup(false); setMenuPopup(!menuPopup)}} onMouseEnter={e => (e.currentTarget.src = menu2)} onMouseLeave={e => (e.currentTarget.src = menu1)}/>
-                <img className="icons mt-2" id="icon2" src={stats1} alt="stats.png" onClick={()=> {setMenuPopup(false); setHelpPopup(false); setSettingsPopup(false); setUserLoginPopup(false); setNewLoginPopup(false); setStatsPopup(!statsPopup)}} onMouseEnter={e => (e.currentTarget.src = stats2)} onMouseLeave={e => (e.currentTarget.src = stats1)}/>
+            <div className="col-3 d-flex justify-content-start" id='leftNav'>
+                <img className="icons mt-2 ml-0" id="icon1" src={menu1} alt="menu.png" onClick={()=> {setStatsPopup(false); setHelpPopup(false); setSettingsPopup(false); setUserLoginPopup(false); setNewLoginPopup(false); setMenuPopup(!menuPopup)}} onMouseEnter={e => (e.currentTarget.src = menu2)} onMouseLeave={e => (e.currentTarget.src = menu1)}/>
+                <img className="icons mt-2 ml-0" id="icon2" src={stats1} alt="stats.png" onClick={()=> {setMenuPopup(false); setHelpPopup(false); setSettingsPopup(false); setUserLoginPopup(false); setNewLoginPopup(false); setStatsPopup(!statsPopup)}} onMouseEnter={e => (e.currentTarget.src = stats2)} onMouseLeave={e => (e.currentTarget.src = stats1)}/>
             </div>
             <h1 className="text-primary pt-2 col-6 mt-0">
                 <Link className='text-decoration-none' to={"/"}><p><span><img className="icons mb-2" id="logoTop" src={logo} alt="numericleLogo.png"/></span>umericle</p></Link>
             </h1>
-            <div className="col-3" id="rightNav">
+            <div className="col-3 d-flex justify-content-end" id="rightNav">
                 <img className="icons mt-2" id="icon3" src={help1} alt="help.png" onClick={()=> {setMenuPopup(false); setStatsPopup(false); setSettingsPopup(false); setUserLoginPopup(false); setNewLoginPopup(false); setHelpPopup(!helpPopup)}} onMouseEnter={e => (e.currentTarget.src = help2)} onMouseLeave={e => (e.currentTarget.src = help1)}/>
                 <img className="icons mt-2" id="icon4" src={settings1} alt="settings.png" onClick={()=> {setMenuPopup(false); setStatsPopup(false); setHelpPopup(false); setUserLoginPopup(false); setNewLoginPopup(false); setSettingsPopup(!settingsPopup)}} onMouseEnter={e => (e.currentTarget.src = settings2)} onMouseLeave={e => (e.currentTarget.src = settings1)}/>
             </div>
