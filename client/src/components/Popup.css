@@ -1,6 +1,6 @@
 
 .popup{
-    position: absolute;
+    position: fixed;
     /* left: 0%;
     min-width: 100vw;
     height: fit-content;
@@ -12,15 +12,14 @@
     transform:translate(-50%, -50%);
     width: 100vw;
     z-index: 9;
+    box-shadow: rgba(0,0,0,0.8) 30px 30px 300px;
 }
 
 .popup-inner {
     min-height: fit-content;
-    position: relative;
     padding: 30px;
     z-index: 10;
     background-color: white;
-    box-shadow: rgba(0,0,0,0.8) 30px 30px 300px;
 }
 
 .popup-inner .close-btn{

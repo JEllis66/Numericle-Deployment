@@ -31,7 +31,7 @@ const Navigation = () =>{
     return (
 
         <div id="nav" className="container d-flex justify-content-between align-middle mt-3">
-            <div className="row col-0">
+            <div className="col-0">
                 <Menu trigger={menuPopup} setTrigger={setMenuPopup}>
                     <div className="d-flex justify-content-between">
                         <h2 className="text-secondary"> Menu:</h2>
