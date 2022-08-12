@@ -1,0 +1,236 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.icons {
+  height: 35px;
+}
+
+.icons:hover {
+  cursor: pointer;
+}
+
+#icon2{
+  transform: translateX(10px);
+}
+
+#icon3{
+  transform: translateX(-7px);
+}
+
+.key_unselected, .key_selected, .key_pressed, .key_within, .key_correct{
+  border: white 2px solid;
+  color: white;
+  height: 60px; 
+  text-align: center;
+  padding-top: 11px;
+  border-radius: 10px;
+  font-size: 22px;
+}
+
+.key_unselected, .key_selected{
+  background-color: rgb(180, 180, 180);
+}
+
+.key_unselected:hover, .key_selected:hover{
+  background-color: rgb(128, 128, 128);
+  cursor: pointer;
+}
+
+.key_pressed{
+  background-color: rgb(72, 72, 72);
+}
+
+.key_within{
+  background-color: #ffc107;
+}
+
+.key_within:hover{
+  background-color: #fed14a;
+}
+
+.key_correct{
+  background-color: #198754;
+}
+
+.key_correct:hover{
+  background-color: #23b16f;
+}
+
+.key_pressed:hover,.key_within,.key_correct{
+  cursor: pointer;
+}
+
+#logoTop{
+  height: 38px;
+  transform: translateX(7px);
+  transform: translatey(-3px);
+}
+
+.numericleColor{
+  color: #0275d8;
+}
+
+#todaysSolution{
+  font-size: 21pt;
+}
+
+.key_enter, .key_del{
+  font-size: 22px;
+  height: 60px; 
+  padding-top: 12px;
+  border: white 2px solid;
+  color: white;
+  border-radius: 10px;
+}
+
+.key_enter{
+  background-color: #0275d8;
+}
+
+.key_del{
+  background-color: #ff7f7f;
+}
+
+.key_del:hover{
+  background-color: rgb(255, 64, 64);
+  cursor: pointer;
+}
+
+.key_enter:hover{
+  background-color: rgb(36, 42, 215);
+  cursor: pointer;
+}
+
+.guessGrid,.guessGridAns, .currentBlock, .equals, .solutionGridAns, .correctDig, .nearDig, .wrongDig, .notInEq{
+  width: 6vw;
+  min-width: 6vw;
+  margin-left: 2px;
+  margin-right: 2px;
+  height: 50px;
+  text-align: center;
+  font-size: 18pt;
+  padding-top: 4px;
+}
+
+.guessGrid,.guessGridAns,.solutionGridAns, .correctDig, .nearDig, .wrongDig, .notInEq{
+  border: lightgray 2px solid;
+}
+
+.currentBlock{
+  border: rgb(218, 54, 54) 3px solid;
+}
+
+.closePopUp{
+  width: 30px;
+  height: 30px;
+  border-radius: 50em;
+  background-color: rgb(236, 99, 99);
+  border: none;
+  color: white;
+}
+
+li,ul{
+  font-size: 16pt;
+  list-style-type: none;
+}
+
+
+#keyboardBar{
+  all: unset !important;
+}
+
+.correctDig{
+  background-color: #198754;
+  color: white;
+} 
+
+.nearDig{
+  background-color: #ffc107;
+  color: white;
+} 
+
+.wrongDig {
+  background-color: #dc3545;
+  color: white;
+}
+
+.notInEq {
+  background-color: rgb(184, 184, 184);
+  color: white;
+}
+
+#row8, #row9{
+  margin-bottom: 0px !important;
+  margin-top: 0px !important;
+}
+
+#icon6{
+  width: 35px;
+}
+
+#postFrac{
+  font-size: 14pt;
+}
+
+#postFracW{
+  font-size: 14pt;
+  color:#23b16f;
+}
+
+#postFracL{
+  font-size: 14pt;
+  color:#dc3545;
+}
+
+#copyText:hover{
+  cursor: pointer;
+}
+
+#rightNav{
+  padding-left: 45px;
+}
+
+#row8{
+  transform: translateY(-16px);
+}
+
+#row9{
+  transform: translateY(-32px);
+}
+
+#topHR{
+  transform: translateY(-15px);
+}
+
+.tutIMG{
+  height: 60px;
+}
+
+.tut0IMG{
+  height: 80px;
+}
+
+.tut2IMG{
+  height: 160px;
+}
