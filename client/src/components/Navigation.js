@@ -63,8 +63,8 @@ const Navigation = () =>{
                     </div>
                     <div className="row d-flex justify-content-center mt-3">
                         <h2 className="text-primary mb-4"> How to Play:</h2>
-                        <p className="fst-italic text-start mb-3">Find the <span className="fw-bold">6 Missing Characters</span> from the Daily Random Equation! 4 of the equations's total 10 characters (2 operators, and 2 digits) are revealed to help you.</p>
-                        <p className="mt-4">Upon entering a guess, you can use the following indicators to assist you on your search for the solution:</p>
+                        <p className="fw-bold text-start mb-3">Solve the Puzzle by finding Today's Equation that is equal to Today's Solution. Find the <u>6 Missing Characters</u> from the Daily Equation! 4 of the equation's total 10 characters (2 operators, and 2 digits) are revealed to help you.</p>
+                        <p className="fst-italic mt-4">Upon entering a guess, you can use the following indicators to assist you on your search for the solution:</p>
                         <hr/>
                         <div className=" justify-content-center mt-2 mb-3">
                             <img className="tutIMG" src={greenGrid}/>
