@@ -222,3 +222,7 @@ li,ul{
 #topHR{
   transform: translateY(-15px);
 }
+
+.tutIMG{
+  height: 60px;
+}

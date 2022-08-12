@@ -17,6 +17,9 @@ import help2 from "../images/help_hover.png";
 import settings1 from "../images/settings_light.png";
 import settings2 from "../images/settings_hover.png";
 import logo from "../images/logo.png";
+import greenGrid from "../images/greenGrid.png"
+import yellowGrid from "../images/yellowGrid.png"
+import grayGrid from "../images/grayGrid.png"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Navigation = () =>{
@@ -58,8 +61,26 @@ const Navigation = () =>{
                         <h2 className="text-secondary"> Help:</h2>
                         <button className="closePopUp" onClick={()=> {setMenuPopup(false); setStatsPopup(false); setSettingsPopup(false); setUserLoginPopup(false); setNewLoginPopup(false); setHelpPopup(!helpPopup)}}>X</button>
                     </div>
-                    <div className="row d-flex justify-content-start mt-3">
-                        <p>Help/Tutorial Graphic will go here...</p>
+                    <div className="row d-flex justify-content-center mt-3">
+                        <h2 className="text-primary mb-4"> How to Play:</h2>
+                        <p className="fst-italic text-start mb-3">Find the <span className="fw-bold">6 Missing Characters</span> from the Daily Random Equation! 4 of the equations's total 10 characters (2 operators, and 2 digits) are revealed to help you.</p>
+                        <p className="mt-4">Upon entering a guess, you can use the following indicators to assist you on your search for the solution:</p>
+                        <hr/>
+                        <div className=" justify-content-center mt-2 mb-3">
+                            <img className="tutIMG" src={greenGrid}/>
+                            <p className="mt-4 mb-3">A <span className='text-success fw-bold'>Green</span> background incidcates that you have found a missing character. This number or operator matches the position in the daily equation. The on-screen keyboard will highlight this character <span className='text-success fw-bold'>green</span>. (Hint: this character can be found again as another missing character)! </p>
+                            <hr/>
+                        </div>
+                        <div className=" justify-content-center mt-2 mb-3">
+                            <img className="tutIMG" src={yellowGrid}/>
+                            <p className="mt-4 mb-3">A <span className='text-warning fw-bold'>Yellow</span> background indicates that you have found one of the 6 missing characters from the daily equation, but your guess is in the incorrect position. The on-screen keyboard will highlight this character <span className='text-warning fw-bold'>yellow</span>. </p>
+                            <hr/>
+                        </div>
+                        <div className=" justify-content-center mt-2 mb-3">
+                            <img className="tutIMG" src={grayGrid}/>
+                            <p className="mt-4 mb-3">A <span className='text-secondary fw-bold'>Gray</span> background indicates that this character does not belong at this position. The on-screen keyboard will <span className='fw-bold'>darken</span> this charater's key if the character does not match any of the 6 missing characters in the daily equation.</p>
+                        </div>
+
                     </div>    
                 </Help>
                 <Settings trigger={settingsPopup} setTrigger={setSettingsPopup}>
