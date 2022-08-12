@@ -17,9 +17,11 @@ import help2 from "../images/help_hover.png";
 import settings1 from "../images/settings_light.png";
 import settings2 from "../images/settings_hover.png";
 import logo from "../images/logo.png";
-import greenGrid from "../images/greenGrid.png"
-import yellowGrid from "../images/yellowGrid.png"
-import grayGrid from "../images/grayGrid.png"
+import greenGrid from "../images/greenGrid.png";
+import yellowGrid from "../images/yellowGrid.png";
+import grayGrid from "../images/grayGrid.png";
+import tutorial from "../images/tutorial_graphic.png";
+import outOfBounds from "../images/out_of_bounds.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Navigation = () =>{
@@ -63,7 +65,11 @@ const Navigation = () =>{
                     </div>
                     <div className="row d-flex justify-content-center mt-3">
                         <h2 className="text-primary mb-4"> How to Play:</h2>
-                        <p className="fw-bold text-start mb-3">Solve the Puzzle by finding Today's Equation that is equal to Today's Solution. Find the <u>6 Missing Characters</u> from the Daily Equation! 4 of the equation's total 10 characters (2 operators, and 2 digits) are revealed to help you.</p>
+                        <p className="fw-bold text-center mt-2 mb-3">Solve the Puzzle by finding Today's Equation that is equal to Today's Solution: </p>
+                        <hr/>
+                        <img id="tut0IMG" className="mt-3 mb-3" src={tutorial}/>
+                        <hr/>
+                        <p className="fw-bold"> <span className='text-success fw-bold'> 4 of the equation's total 10 characters (2 operators, and 2 digits) are revealed to help you.</span> Find the <u>6 Missing Characters</u> from the Daily Equation! </p>
                         <p className="fst-italic mt-4">Upon entering a guess, you can use the following indicators to assist you on your search for the solution:</p>
                         <hr/>
                         <div className=" justify-content-center mt-2 mb-3">
@@ -73,12 +79,17 @@ const Navigation = () =>{
                         </div>
                         <div className=" justify-content-center mt-2 mb-3">
                             <img className="tutIMG" src={yellowGrid}/>
-                            <p className="mt-4 mb-3 text-start">A <span className='text-warning fw-bold'>Yellow</span> background indicates that you have found one of the 6 missing characters from the daily equation, but your guess is in the incorrect position. The on-screen keyboard will highlight this character <span className='text-warning fw-bold'>yellow</span>. </p>
+                            <p className="mt-4 mb-3 text-start">A <span className='text-warning fw-bold'>Yellow</span> background indicates that you have found one of the 6 missing characters from the daily equation, but your guess is in the incorrect position. The on-screen keyboard will highlight this character <span className='text-warning fw-bold'>yellow</span>.</p>
                             <hr/>
                         </div>
                         <div className=" justify-content-center mt-2 mb-3">
                             <img className="tutIMG" src={grayGrid}/>
                             <p className="mt-4 mb-3 text-start">A <span className='text-secondary fw-bold'>Gray</span> background indicates that this character does not belong at this position. The on-screen keyboard will <span className='fw-bold'>darken</span> this charater's key if the character does not match any of the 6 missing characters in the daily equation.</p>
+                        </div>
+                        <hr/>
+                        <div className=" justify-content-center mt-2 mb-3">
+                            <img className="tut2IMG" src={outOfBounds}/>
+                            <p className="mt-4 mb-3 text-start">One of the cases from the image above will display if the entered equation is out of bounds (Less than 0, or Greater than 999).</p>
                         </div>
 
                     </div>    

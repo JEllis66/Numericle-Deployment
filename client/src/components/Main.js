@@ -184,12 +184,19 @@ const Main = (props) =>{
 
         let answer = (math.evaluate(liveEq));
 
-        if( answer < 1 || answer > 999){
-            document.getElementById(`ans${currentRow}spot1`).innerHTML = "O";
-            document.getElementById(`ans${currentRow}spot2`).innerHTML = "U";
-            document.getElementById(`ans${currentRow}spot3`).innerHTML = "T";
+        if(answer > 999){
+            document.getElementById(`equalsRow${currentRow}`).innerHTML = ">";
+            document.getElementById(`ans${currentRow}spot1`).innerHTML = "9";
+            document.getElementById(`ans${currentRow}spot2`).innerHTML = "9";
+            document.getElementById(`ans${currentRow}spot3`).innerHTML = "9";
+        } else if (answer < 0) {
+            document.getElementById(`equalsRow${currentRow}`).innerHTML = "<";
+            document.getElementById(`ans${currentRow}spot1`).innerHTML = "0";
+            document.getElementById(`ans${currentRow}spot2`).innerHTML = "0";
+            document.getElementById(`ans${currentRow}spot3`).innerHTML = "0";
         } else{
             if(answer.toString().length === 1){
+                document.getElementById(`equalsRow${currentRow}`).innerHTML = "=";
                 answer = ("00" + answer.toString());
                 document.getElementById(`ans${currentRow}spot1`).innerHTML = answer.toString()[0];
                 document.getElementById(`ans${currentRow}spot2`).innerHTML = answer.toString()[1];
@@ -375,7 +382,12 @@ const Main = (props) =>{
         } else if (answer.length === 2){
             answer = ("0" + answer);
         } else if (parseInt(answer) > 999 || parseInt(answer) < 0 || answer.includes("-")){
-            answer = "OUT"
+            if (answer > 999){
+                answer = "999";
+            } else if(answer < 0) {
+                answer = "000";
+            }
+                
             document.getElementById(`ans${currentRow}spot1`).className = "wrongDig";
             document.getElementById(`ans${currentRow}spot2`).className = "wrongDig";
             document.getElementById(`ans${currentRow}spot3`).className = "wrongDig";
@@ -751,7 +763,7 @@ const Main = (props) =>{
                                 <p className="guessGrid" id={`row${row}col${col}`}></p>
                             </div>
                         ))}
-                        <p className="equals">=</p>
+                        <p className="equals" id={`equalsRow${row}`}>=</p>
                         <p className="guessGridAns" id={`ans${row}spot1`}></p>
                         <p className="guessGridAns" id={`ans${row}spot2`}></p>
                         <p className="guessGridAns" id={`ans${row}spot3`}></p>
