@@ -202,11 +202,13 @@ const Main = (props) =>{
                 document.getElementById(`ans${currentRow}spot2`).innerHTML = answer.toString()[1];
                 document.getElementById(`ans${currentRow}spot3`).innerHTML = answer.toString()[2];
             } else if (answer.toString().length === 2){
+                document.getElementById(`equalsRow${currentRow}`).innerHTML = "=";
                 answer = ("0" + answer.toString());
                 document.getElementById(`ans${currentRow}spot1`).innerHTML = answer.toString()[0];
                 document.getElementById(`ans${currentRow}spot2`).innerHTML = answer.toString()[1];
                 document.getElementById(`ans${currentRow}spot3`).innerHTML = answer.toString()[2];
             } else {
+                document.getElementById(`equalsRow${currentRow}`).innerHTML = "=";
                 document.getElementById(`ans${currentRow}spot1`).innerHTML = answer.toString()[0];
                 document.getElementById(`ans${currentRow}spot2`).innerHTML = answer.toString()[1];
                 document.getElementById(`ans${currentRow}spot3`).innerHTML = answer.toString()[2];
