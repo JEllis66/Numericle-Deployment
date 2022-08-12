@@ -68,17 +68,17 @@ const Navigation = () =>{
                         <hr/>
                         <div className=" justify-content-center mt-2 mb-3">
                             <img className="tutIMG" src={greenGrid}/>
-                            <p className="mt-4 mb-3">A <span className='text-success fw-bold'>Green</span> background incidcates that you have found a missing character. This number or operator matches the position in the daily equation. The on-screen keyboard will highlight this character <span className='text-success fw-bold'>green</span>. (Hint: this character can be found again as another missing character)! </p>
+                            <p className="mt-4 mb-3 text-start">A <span className='text-success fw-bold'>Green</span> background incidcates that you have found a missing character. This number or operator matches the position in the daily equation. The on-screen keyboard will highlight this character <span className='text-success fw-bold'>green</span>. (Hint: this character can be found again as another missing character)! </p>
                             <hr/>
                         </div>
                         <div className=" justify-content-center mt-2 mb-3">
                             <img className="tutIMG" src={yellowGrid}/>
-                            <p className="mt-4 mb-3">A <span className='text-warning fw-bold'>Yellow</span> background indicates that you have found one of the 6 missing characters from the daily equation, but your guess is in the incorrect position. The on-screen keyboard will highlight this character <span className='text-warning fw-bold'>yellow</span>. </p>
+                            <p className="mt-4 mb-3 text-start">A <span className='text-warning fw-bold'>Yellow</span> background indicates that you have found one of the 6 missing characters from the daily equation, but your guess is in the incorrect position. The on-screen keyboard will highlight this character <span className='text-warning fw-bold'>yellow</span>. </p>
                             <hr/>
                         </div>
                         <div className=" justify-content-center mt-2 mb-3">
                             <img className="tutIMG" src={grayGrid}/>
-                            <p className="mt-4 mb-3">A <span className='text-secondary fw-bold'>Gray</span> background indicates that this character does not belong at this position. The on-screen keyboard will <span className='fw-bold'>darken</span> this charater's key if the character does not match any of the 6 missing characters in the daily equation.</p>
+                            <p className="mt-4 mb-3 text-start">A <span className='text-secondary fw-bold'>Gray</span> background indicates that this character does not belong at this position. The on-screen keyboard will <span className='fw-bold'>darken</span> this charater's key if the character does not match any of the 6 missing characters in the daily equation.</p>
                         </div>
 
                     </div>    

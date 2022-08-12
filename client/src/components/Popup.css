@@ -17,8 +17,8 @@
 
 .popup-inner {
     min-height: fit-content;
-    max-height: 70vh;
-    padding: 30px;
+    max-height: 75vh;
+    padding: 32px;
     z-index: 10;
     background-color: white;
     overflow-y: scroll;
