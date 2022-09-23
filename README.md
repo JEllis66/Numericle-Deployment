@@ -1,9 +1,7 @@
 
 ---
 
-<p alighn="center">
-  <h1> Numericle - In Action! </h1>
-</p>
+  <h1 align="center"> Numericle - In Action! </h1>
 
 ---
 
