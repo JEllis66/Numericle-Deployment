@@ -1,6 +1,6 @@
 ---
 
-  <p align="center"> ![Numericle:](http://numericle.ddns.net) - In Action! </p>
+  <p align="center"> [Numericle:](http://numericle.ddns.net) - In Action! </p>
   
 ---
 
