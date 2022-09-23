@@ -1,6 +1,6 @@
 ---
 
-# Numericle - Link to check it out! - <a href="http://numericle.ddns.net"> Numericle </a>
+# <a href="http://numericle.ddns.net"> Numericle </a>
 
 ---
 
