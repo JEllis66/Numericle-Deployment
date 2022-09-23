@@ -1,6 +1,6 @@
 <p align="center">
   
-<a href="http://numericle.ddns.net"> Numericle </a>
+<a align="center" href="http://numericle.ddns.net"> Numericle </a>
   
 </p>
 
